@@ -109,10 +109,13 @@
     <Compile Include="Assets\Assets\_Gloomy_Wizard\Script\Bullet.cs" />
     <Compile Include="Assets\Assets\_Gloomy_Wizard\Script\CharacterSelect.cs" />
     <Compile Include="Assets\Assets\_Gloomy_Wizard\Script\MouseOrbitImproved.cs" />
-    <Compile Include="Assets\Scripts\Monster_Scripts\Mob_Manager_Scripts.cs" />
-    <Compile Include="Assets\Scripts\Monster_Scripts\Mob_controller.cs" />
-    <Compile Include="Assets\Scripts\Monster_Scripts\Mob_info.cs" />
-    <Compile Include="Assets\Scripts\Nomal_Mob_Animator.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\AI\Monster_AI.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Animation\Nomal_Mob_Animator.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Dummy_move.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_Manager_Scripts.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_controller.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_info.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Spawn\Spawn_System.cs" />
     <None Include="Assets\Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\Assets\Combat Magic VFX Vol.2\shaders\Special-Bones-Glowing.shader" />
     <None Include="Assets\Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
@@ -400,6 +403,12 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

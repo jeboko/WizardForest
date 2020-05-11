@@ -58,6 +58,7 @@ public class Nomal_Mob_Animator : MonoBehaviour
 
         if (HP <= 0)
         {
+            controller.Speed = 0;
             animator.SetBool("die", true);
             animator.SetBool("walk", false);
             animator.SetBool("damage", false);

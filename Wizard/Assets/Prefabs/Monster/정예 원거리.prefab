@@ -10626,6 +10626,7 @@ MonoBehaviour:
   Mob_num: 4
   Hp: 0
   Atk: 0
+  Speed: 0
 --- !u!114 &7246106887246486242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10641,6 +10642,7 @@ MonoBehaviour:
   isAttack: 0
   isDamage: 0
   HP: 0
+  temp_speed: 0
 --- !u!54 &2930603491991518080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10704,6 +10706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ae81bcaa64dd459cb5695f05558f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  agent: {fileID: 0}
+  mob_speed: 0
 --- !u!135 &1239665282702088360
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10715,7 +10720,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 11
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4565352222348646210
 GameObject:

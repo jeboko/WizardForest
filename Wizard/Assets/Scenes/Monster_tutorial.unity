@@ -917,7 +917,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1098913512
 MonoBehaviour:
@@ -1193,6 +1193,99 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354976066}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1385365496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385365497}
+  - component: {fileID: 1385365500}
+  - component: {fileID: 1385365499}
+  - component: {fileID: 1385365498}
+  m_Layer: 0
+  m_Name: Cube (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1385365497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385365496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.06, y: 0, z: -0.92}
+  m_LocalScale: {x: 0.28066, y: 2.6386, z: 2.4068}
+  m_Children: []
+  m_Father: {fileID: 2049235672}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1385365498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385365496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1385365499
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385365496}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c704c3d1ded40d447ac4bcb1dd1a4a85, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1385365500
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385365496}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1392946064
 PrefabInstance:
@@ -1794,6 +1887,7 @@ Transform:
   - {fileID: 1085816062}
   - {fileID: 1293674976}
   - {fileID: 1605703597}
+  - {fileID: 1385365497}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1817,12 +1911,12 @@ PrefabInstance:
     - target: {fileID: 816839880183303888, guid: 411b76aa44d67da41ac04d075fa2cf3e,
         type: 3}
       propertyPath: deck.Array.data[1].weight
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 816839880183303888, guid: 411b76aa44d67da41ac04d075fa2cf3e,
         type: 3}
       propertyPath: deck.Array.data[2].weight
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 816839880183303888, guid: 411b76aa44d67da41ac04d075fa2cf3e,
         type: 3}
@@ -1916,12 +2010,12 @@ PrefabInstance:
     - target: {fileID: 8146758634545680865, guid: b97c82ab7bb7f0442a4ce0d35ce82433,
         type: 3}
       propertyPath: deck.Array.data[2].speed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8146758634545680865, guid: b97c82ab7bb7f0442a4ce0d35ce82433,
         type: 3}
       propertyPath: deck.Array.data[3].speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8146758634545680870, guid: b97c82ab7bb7f0442a4ce0d35ce82433,
         type: 3}

@@ -30,6 +30,8 @@ public class Mob_controller : MonoBehaviour
     void Update()
     {
         navimash_controller.mob_speed = Speed;
-        //Hp = Hp - 0.05f;
+
+        // 죽는 모션 확인용
+        Hp = Hp - 0.05f;
     }
 }

@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class Attack_Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float time;
+
+    public GameObject nomal_attack;
+    public float normal_cooltime;
+
+
     void Start()
     {
-        
+        time = normal_cooltime;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if(time < normal_cooltime)
+        {
+            time += Time.deltaTime;
+        }
+        print(time);
+    }
+
+    public void Normal_shot()
+    {
+        if(time >= normal_cooltime)
+        {
+            time = 0;
+            Instantiate(nomal_attack, transform.position, transform.rotation);
+        }
     }
 }

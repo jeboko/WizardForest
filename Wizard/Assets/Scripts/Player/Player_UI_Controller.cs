@@ -12,6 +12,10 @@ public class Player_UI_Controller : MonoBehaviour
     public float stemina_inc; //스테미나 회복 속도
     bool fullstemina;
 
+    //HP
+    public Image HP;
+    float HP_amount = 1;
+
     void Start()
     {
         fullstemina = true;

@@ -5,9 +5,12 @@ using UnityEngine;
 public class Player_Controller : MonoBehaviour
 {
     public static bool isdeath;
+    public static bool iswalking;
     public static bool isruning;
     public static bool canrun;
     public GameObject Player_UI;
+    public GameObject Attacker;
+    public GameObject Modelling;
 
     //Move
     public float move_speed; //걷기 스피드
@@ -21,16 +24,23 @@ public class Player_Controller : MonoBehaviour
     public float run_speed; //달리기 스피드
     float originspeed;
 
+    //Animation
+    Animator Anim;
+
 
     Rigidbody RB;
 
 
     void Start()
     {
+        iswalking = false;
         isdeath = false;
         isruning = false;
         canrun = true;
+
         RB = GetComponent<Rigidbody>();
+        Anim = Modelling.GetComponent<Animator>(); 
+
         originspeed = move_speed;
     }
 
@@ -47,14 +57,24 @@ public class Player_Controller : MonoBehaviour
             Turn(h, v);
 
             Run();
+
+            Animation();
         }
     }
 
     void Move(float h, float v)
     {
-        movement.Set(h, 0, v);
-        movement = movement.normalized * move_speed * Time.deltaTime;
-        RB.MovePosition(transform.position + movement);
+        if(h == 0 && v == 0)
+        {
+            iswalking = false;
+        }
+        else
+        {
+            iswalking = true;
+            movement.Set(h, 0, v);
+            movement = movement.normalized * move_speed * Time.deltaTime;
+            RB.MovePosition(transform.position + movement);
+        }
     }
 
     void Turn(float h, float v)
@@ -68,19 +88,23 @@ public class Player_Controller : MonoBehaviour
         {
             if(Input.GetKey(KeyCode.LeftArrow))
             {
-                lookrotation = new Vector3(-99999, 0, 0);
+                lookrotation = new Vector3(-10000, 0, 0);
+                Attacker.GetComponent<Attack_Controller>().Normal_shot();
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                lookrotation = new Vector3(99999, 0, 0);
+                lookrotation = new Vector3(10000, 0, 0);
+                Attacker.GetComponent<Attack_Controller>().Normal_shot();
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
-                lookrotation = new Vector3(0, 0, 99999);
+                lookrotation = new Vector3(0, 0, 10000);
+                Attacker.GetComponent<Attack_Controller>().Normal_shot();
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
-                lookrotation = new Vector3(0, 0, -99999);
+                lookrotation = new Vector3(0, 0, -10000);
+                Attacker.GetComponent<Attack_Controller>().Normal_shot();
             }
             Quaternion newRotation = Quaternion.LookRotation(lookrotation);
             RB.rotation = Quaternion.Slerp(RB.rotation, newRotation, turnspeed * Time.deltaTime);
@@ -101,6 +125,20 @@ public class Player_Controller : MonoBehaviour
         {
             move_speed = originspeed;
             isruning = false;
+        }
+    }
+
+    void Animation()
+    {
+        Anim.SetBool("walk", iswalking);
+        Anim.SetBool("run", isruning);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Anim.SetTrigger("attacked");
         }
     }
 } 

@@ -111,6 +111,7 @@
     <Compile Include="Assets\Assets\Player\Combat Magic VFX Vol.2\scripts\demo.cs" />
     <Compile Include="Assets\Scripts\CameraCon.cs" />
     <Compile Include="Assets\Scripts\Player\Attack_Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\Bullet_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\Player_UI_Controller.cs" />
     <Compile Include="Assets\Scripts\Scene_Manager.cs" />

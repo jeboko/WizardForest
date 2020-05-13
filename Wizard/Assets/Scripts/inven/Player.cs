@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 	public Text countWood;
 
 	public GameObject baricate;
+    public GameObject build_checker;
 
 	private void OnTriggerStay(Collider col)
 {
@@ -59,8 +60,9 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
-			Instantiate(baricate, transform.position, Quaternion.identity);
-			rock_count--;
+            Instantiate(baricate, build_checker.transform.position, Quaternion.identity).transform.parent = build_checker.transform;
+            
+            rock_count--;
 			wood_count--;
 		}
 	}

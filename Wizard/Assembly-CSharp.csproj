@@ -111,7 +111,11 @@
     <Compile Include="Assets\Assets\_Gloomy_Wizard\Script\MouseOrbitImproved.cs" />
     <Compile Include="Assets\Scripts\Monster_Scripts\AI\Monster_AI.cs" />
     <Compile Include="Assets\Scripts\Monster_Scripts\Animation\Nomal_Mob_Animator.cs" />
-    <Compile Include="Assets\Scripts\Monster_Scripts\Dummy_move.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Attack\Ball_scripts.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Attack\Long_Range.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Attack\Short_Range.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Attack\Short_atk_box.cs" />
+    <Compile Include="Assets\Scripts\Monster_Scripts\Dummy\Dummy_move.cs" />
     <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_Manager_Scripts.cs" />
     <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_controller.cs" />
     <Compile Include="Assets\Scripts\Monster_Scripts\Info\Mob_info.cs" />

@@ -20,6 +20,9 @@ public class Nomal_Mob_Animator : MonoBehaviour
     // 스피드를 0으로 만들기 전에 원래 스피드를 저장할 값
     public float temp_speed;
 
+    public bool long_atk;
+    public bool short_atk;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,11 +31,13 @@ public class Nomal_Mob_Animator : MonoBehaviour
         //manager = GetComponent<Mob_controller>();
         controller = gameObject.GetComponent<Mob_controller>();
         temp_speed = controller.Speed;
+        long_atk = false;
     }
 
     private void FixedUpdate()
     {
         HP = controller.Hp;
+
         // isAttack가 참이라면 공격 애니메이션 실행
         if (isAttack)
         {
@@ -67,23 +72,17 @@ public class Nomal_Mob_Animator : MonoBehaviour
    
         // dead라는 이름의 애니메이션 클립이 끝나면 해당 오브젝트를 삭제한다.
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.dead") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+           animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
         {
             Destroy(gameObject);
         }
-        /*
-        while (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
             controller.Speed = 0;
         }
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.walk") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
-        {
-            
-        }
-        */
+        my_Atk();
     }
 
     // 오브젝트와 몬스터의 콜라이더가 충돌시 처리함수
@@ -113,6 +112,39 @@ public class Nomal_Mob_Animator : MonoBehaviour
         if (other.tag == "Damage")
         {
             isDamage = false;
+        }
+    }
+
+
+    private void my_Atk()
+    {
+        // 원거리공격 판정?
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.4f)
+        {
+            long_atk = true;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+        {
+            long_atk = false;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3f)
+        {
+            short_atk = true;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+        {
+            short_atk = false;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
+        {
+            animator.Play("attack", -1, 0f);
         }
     }
 }

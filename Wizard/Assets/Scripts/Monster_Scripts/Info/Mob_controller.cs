@@ -32,6 +32,6 @@ public class Mob_controller : MonoBehaviour
         navimash_controller.mob_speed = Speed;
 
         // 죽는 모션 확인용
-        Hp = Hp - 0.05f;
+        //Hp = Hp - 0.05f;
     }
 }

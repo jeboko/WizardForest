@@ -7,10 +7,10 @@ public class Mob_info
 {
     // 몬스터 스탯 정보
     public string MobName;
+    public float weight;
     public GameObject MobObject;
     public float Hp;
     public float Atk;
-    public float weight;
     public float speed;
 
     public Mob_info(Mob_info mob_Info)

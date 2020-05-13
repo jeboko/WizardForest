@@ -5,11 +5,10 @@ using UnityEngine.AI;
 
 public class Monster_AI : MonoBehaviour
 {
-    public Rigidbody rb;
-    public NavMeshAgent agent;
+    private Rigidbody rb;
+    private NavMeshAgent agent;
 
     public float mob_speed;
-
     // Start is called before the first frame update
     void Start()
     {

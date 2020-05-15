@@ -8,9 +8,16 @@ public class Player_Controller : MonoBehaviour
     public static bool iswalking;
     public static bool isruning;
     public static bool canrun;
+    public static bool canwalk;
     public GameObject Player_UI;
     public GameObject Attacker;
     public GameObject Modelling;
+
+    //Skill
+    float time;
+    public static float skill_time;
+    public static float skill_usetime;
+    bool skill_used;
 
     //Move
     public float move_speed; //걷기 스피드
@@ -24,12 +31,8 @@ public class Player_Controller : MonoBehaviour
     public float run_speed; //달리기 스피드
     float originspeed;
 
-    //Animation
     Animator Anim;
-
-
     Rigidbody RB;
-
 
     void Start()
     {
@@ -37,6 +40,8 @@ public class Player_Controller : MonoBehaviour
         isdeath = false;
         isruning = false;
         canrun = true;
+        canwalk = true;
+        skill_used = false;
 
         RB = GetComponent<Rigidbody>();
         Anim = Modelling.GetComponent<Animator>(); 
@@ -52,12 +57,40 @@ public class Player_Controller : MonoBehaviour
 
         if (isdeath == false)
         {
-            Move(h, v);
+            if (canwalk)
+            {
+                Move(h, v);
 
-            Turn(h, v);
+                Turn(h, v);
 
-            Run();
+                Run();
 
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    if (isruning == false)
+                    {
+                        Attacker.GetComponent<Attack_Controller>().Skill();
+                    }
+                }
+            }
+            else
+            {
+                time += Time.deltaTime;
+                if(time > skill_usetime)
+                {
+                    if(skill_used == false)
+                    {
+                        Attacker.GetComponent<Attack_Controller>().Use_Skill();
+                        skill_used = true;
+                    }
+                    if (time > skill_time)
+                    {
+                        canwalk = true;
+                        skill_used = false;
+                        time = 0;
+                    }
+                }
+            }
             Animation();
         }
     }
@@ -134,11 +167,31 @@ public class Player_Controller : MonoBehaviour
         Anim.SetBool("run", isruning);
     }
 
+    public void Death()
+    {
+        Anim.SetBool("death", isdeath);
+    }
+
+    public void Skill_anim(int anim_num)
+    {
+        canwalk = false;
+        if(anim_num == 1)
+        {
+            Anim.SetTrigger("skill1");
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Enemy")
         {
+            Player_UI.GetComponent<Player_UI_Controller>().Demage();
             Anim.SetTrigger("attacked");
+        }
+        if (collision.gameObject.tag == "item")
+        {
+            if(collision.gameObject.GetComponent<ItemController>().item_num == 0)
+                Attacker.GetComponent<Attack_Controller>().Load_Skill(0);
         }
     }
 } 

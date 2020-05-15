@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Player_UI_Controller : MonoBehaviour
 {
+    public GameObject player;
+
     //Stemina
     public Image stemina;
     float stemina_amount = 1;
@@ -12,13 +14,23 @@ public class Player_UI_Controller : MonoBehaviour
     public float stemina_inc; //스테미나 회복 속도
     bool fullstemina;
 
-    //HP
+    //HealthPoint
     public Image HP;
-    float HP_amount = 1;
+    public float HP_amount;
+    float fullHP;
+    public float HP_dec; //hp감소량
+
+    //Mana
+    public Image Mana;
+    public static float Mana_amount = 100;
+    public float mana_inc; //마나 회복 속도
+    float fullMana;
 
     void Start()
     {
         fullstemina = true;
+        fullHP = HP_amount;
+        fullMana = Mana_amount;
     }
 
     void FixedUpdate()
@@ -26,6 +38,8 @@ public class Player_UI_Controller : MonoBehaviour
         if (Player_Controller.isdeath == false)
         {
             Stemina();
+            HealthPoint();
+            ManaPoint();
         }
     }
 
@@ -52,6 +66,31 @@ public class Player_UI_Controller : MonoBehaviour
                 stemina.color = new Color(1, 1, 1, 1f);
                 Player_Controller.canrun = true;
             }
+        }
+    }
+
+    void HealthPoint()
+    {
+        HP.fillAmount = HP_amount / fullHP;
+    }
+
+    void ManaPoint()
+    {
+        Mana.fillAmount = Mana_amount / fullMana;
+        if(Mana_amount <= fullMana)
+        {
+            Mana_amount += mana_inc;
+        }
+    }
+
+    public void Demage()
+    {
+        HP_amount -= HP_dec;
+        if(HP_amount <= 0)
+        {
+            Player_Controller.isdeath = true;
+            player.GetComponent<Player_Controller>().Death();
+            HealthPoint();
         }
     }
 }

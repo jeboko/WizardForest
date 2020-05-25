@@ -179,6 +179,18 @@ public class Player_Controller : MonoBehaviour
         {
             Anim.SetTrigger("skill1");
         }
+        else if (anim_num == 2)
+        {
+            Anim.SetTrigger("skill2");
+        }
+        else if (anim_num == 3)
+        {
+            Anim.SetTrigger("skill3");
+        }
+        else if (anim_num == 4)
+        {
+            Anim.SetTrigger("skill4");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -190,8 +202,27 @@ public class Player_Controller : MonoBehaviour
         }
         if (collision.gameObject.tag == "item")
         {
-            if(collision.gameObject.GetComponent<ItemController>().item_num == 0)
-                Attacker.GetComponent<Attack_Controller>().Load_Skill(0);
+            if(collision.gameObject.GetComponent<ItemController>().item_num <= 4)
+            {
+                if (collision.gameObject.GetComponent<ItemController>().item_num == 0)
+                    Attacker.GetComponent<Attack_Controller>().Load_Skill(0);
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 1)
+                    Attacker.GetComponent<Attack_Controller>().Load_Skill(1);
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 2)
+                    Attacker.GetComponent<Attack_Controller>().Load_Skill(2);
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 3)
+                    Attacker.GetComponent<Attack_Controller>().Load_Skill(3);
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 4)
+                    Attacker.GetComponent<Attack_Controller>().Load_Skill(4);
+            }
+            else
+            {
+                if (collision.gameObject.GetComponent<ItemController>().item_num == 5)
+                    Player_UI.GetComponent<Player_UI_Controller>().HealHP(25);
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 6)
+                    Player_UI.GetComponent<Player_UI_Controller>().HealMP(25);
+            }
+            collision.gameObject.GetComponent<ItemController>().Hit_Player();
         }
     }
 } 

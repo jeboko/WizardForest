@@ -64,8 +64,8 @@ public class Skills
     public GameObject skill_obj;
     public float skill_mana;
     public int skill_anim;
-    public float skill_time;
-    public float skill_usetime;
+    public float skill_time; //발사하고 움직일 수 있는 시간
+    public float skill_usetime; //스킬 발사하는 시간
 
     public Skills (Skills skill)
     {

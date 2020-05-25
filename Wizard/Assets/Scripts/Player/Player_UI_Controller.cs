@@ -77,7 +77,7 @@ public class Player_UI_Controller : MonoBehaviour
     void ManaPoint()
     {
         Mana.fillAmount = Mana_amount / fullMana;
-        if(Mana_amount <= fullMana)
+        if(Mana_amount < fullMana)
         {
             Mana_amount += mana_inc;
         }
@@ -93,4 +93,17 @@ public class Player_UI_Controller : MonoBehaviour
             HealthPoint();
         }
     }
+    public void HealHP(float amount)
+    {
+        HP_amount += amount;
+        if (HP_amount > fullHP)
+            HP_amount = fullHP;
+    }
+    public void HealMP(float amount)
+    {
+        Mana_amount += amount;
+        if (Mana_amount > fullMana)
+            Mana_amount = fullMana;
+    }
+
 }

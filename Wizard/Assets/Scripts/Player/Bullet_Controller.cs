@@ -9,14 +9,15 @@ public class Bullet_Controller : MonoBehaviour
     public GameObject light;
 
     public float speed;
-    public float start_time;
-    public float destroy_time;
-    public float hit_time;
+    public float start_time; //생성 후 움직이는 시간
+    public float destroy_time; //안 부딧히고 디스트로이 되는 시간
+    public float hit_time; //부딧히고 디스트로이 되는 시간
     public float light_dec;
 
     bool ishit;
     public bool isskill;
     public bool islight;
+    public bool NO_HIT;
     float time;
 
     void FixedUpdate()
@@ -42,10 +43,16 @@ public class Bullet_Controller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Hit();
-        Destroy(gameObject,hit_time);
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "item")
+        {
+            if(NO_HIT == false)
+            {
+                Destroy(gameObject, hit_time);
+                Hit();
+            }
+        }
     }
 
     void Hit()

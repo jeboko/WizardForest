@@ -109,6 +109,15 @@
     <Compile Include="Assets\Assets\Player\_Gloomy_Wizard\Script\Bullet.cs" />
     <Compile Include="Assets\Assets\Player\_Gloomy_Wizard\Script\CharacterSelect.cs" />
     <Compile Include="Assets\Assets\Player\_Gloomy_Wizard\Script\MouseOrbitImproved.cs" />
+    <Compile Include="Assets\Scripts\Buttons.cs" />
+    <Compile Include="Assets\Scripts\Ingame\CameraCon.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Econ.cs" />
+    <Compile Include="Assets\Scripts\Ingame\ItemController.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Player\Attack_Controller.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Player\Bullet_Controller.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Player\Player_Controller.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Player\Player_UI_Controller.cs" />
+    <Compile Include="Assets\Scripts\Ingame\Scene_Manager.cs" />
     <None Include="Assets\Assets\Moster\BackGround\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Assets\Player\Combat Magic VFX Vol.2\shaders\Special-Bones-Glowing.shader" />

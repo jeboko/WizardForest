@@ -4828,6 +4828,7 @@ MonoBehaviour:
   obj: {fileID: 6492296248736121880}
   hit: {fileID: 523403664086696051}
   ishit: 1
+  destroy_time: 1
 --- !u!135 &3545417433225529717
 SphereCollider:
   m_ObjectHideFlags: 0

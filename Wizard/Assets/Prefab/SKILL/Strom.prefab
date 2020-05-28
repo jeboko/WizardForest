@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3997869823646171341}
   m_Layer: 0
   m_Name: Strom
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,11 +50,15 @@ MonoBehaviour:
   OBJ: {fileID: 0}
   light: {fileID: 0}
   speed: 1.5
+  damage: 50
   start_time: 0
   destroy_time: 5
   hit_time: 0
   light_dec: 0
+  boom_radius: 0
   isskill: 1
+  isboom: 0
+  boom_dec: 0
   islight: 0
   NO_HIT: 1
 --- !u!135 &2846221824565800892
@@ -68,8 +72,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!54 &3997869823646171341
 Rigidbody:
   m_ObjectHideFlags: 0

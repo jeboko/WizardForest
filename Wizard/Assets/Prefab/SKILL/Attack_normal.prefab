@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 30337073326973565}
   m_Layer: 0
   m_Name: Attack_normal
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,12 +81,14 @@ MonoBehaviour:
   OBJ: {fileID: 4122567785214106978}
   light: {fileID: 294021080061865208}
   speed: 10
+  damage: 40
   start_time: 0
   destroy_time: 5
   hit_time: 1
   light_dec: 0.4
   isskill: 0
   islight: 1
+  NO_HIT: 0
 --- !u!1 &294021080061865208
 GameObject:
   m_ObjectHideFlags: 0

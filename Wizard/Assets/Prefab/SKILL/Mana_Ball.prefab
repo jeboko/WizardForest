@@ -9671,7 +9671,7 @@ GameObject:
   - component: {fileID: 3859072245635626474}
   m_Layer: 0
   m_Name: Mana_Ball
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9736,13 +9736,18 @@ MonoBehaviour:
   hit: {fileID: 227045200736091630}
   OBJ: {fileID: 8599104060396786563}
   light: {fileID: 0}
-  speed: 10
-  start_time: 0
+  speed: 5
+  damage: 50
+  start_time: 0.5
   destroy_time: 5
-  hit_time: 2
+  hit_time: 1
   light_dec: 0
+  boom_radius: 1
   isskill: 1
+  isboom: 1
+  boom_dec: 1
   islight: 0
+  NO_HIT: 0
 --- !u!1 &3877047495707712955
 GameObject:
   m_ObjectHideFlags: 0

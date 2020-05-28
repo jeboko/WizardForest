@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7121893985561571533}
   m_Layer: 0
   m_Name: Star
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,12 +51,17 @@ MonoBehaviour:
   OBJ: {fileID: 6662194229730525433}
   light: {fileID: 0}
   speed: 10
+  damage: 25
   start_time: 0
   destroy_time: 5
   hit_time: 2
   light_dec: 0
+  boom_radius: 0
   isskill: 1
+  isboom: 0
+  boom_dec: 0
   islight: 0
+  NO_HIT: 0
 --- !u!135 &6911995756685461019
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19115,7 +19120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7895332705546039524
 Transform:
   m_ObjectHideFlags: 0

@@ -14393,12 +14393,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1258279366515136286}
-  - component: {fileID: 1414168369569428543}
   - component: {fileID: 3912206917335291901}
   - component: {fileID: 7548933584478214664}
+  - component: {fileID: 1414168369569428543}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14420,28 +14420,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1414168369569428543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258279366515136285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hit: {fileID: 8510548314046796534}
-  OBJ: {fileID: 7252634188447598271}
-  light: {fileID: 5473189095420080149}
-  speed: 5
-  start_time: 0
-  destroy_time: 5
-  hit_time: 5
-  light_dec: 0.1
-  isskill: 1
-  islight: 1
 --- !u!135 &3912206917335291901
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14471,6 +14449,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1414168369569428543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258279366515136285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit: {fileID: 8510548314046796534}
+  OBJ: {fileID: 7252634188447598271}
+  light: {fileID: 5473189095420080149}
+  speed: 5
+  damage: 100
+  start_time: 0
+  destroy_time: 5
+  hit_time: 5
+  light_dec: 0.1
+  boom_radius: 4
+  isskill: 1
+  isboom: 1
+  boom_dec: 1
+  islight: 1
+  NO_HIT: 0
 --- !u!1 &1453581562085496589
 GameObject:
   m_ObjectHideFlags: 0

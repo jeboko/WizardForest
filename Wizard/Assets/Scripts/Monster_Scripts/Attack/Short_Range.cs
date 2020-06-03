@@ -6,7 +6,6 @@ public class Short_Range : MonoBehaviour
 {
     public GameObject atk_range;
 
-    private float time;
     private Nomal_Mob_Animator can_atk;
 
     // Start is called before the first frame update

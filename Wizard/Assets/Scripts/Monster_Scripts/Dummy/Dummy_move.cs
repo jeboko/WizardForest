@@ -14,14 +14,6 @@ public class Dummy_move : MonoBehaviour
     private bool isPickup;
 
     public float Hp;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -45,10 +37,5 @@ public class Dummy_move : MonoBehaviour
             transform.Translate(new Vector3(HorizontalMove, 0, VerticallMove) * speed * Time.deltaTime);
             transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * rotaespeed);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
     }
 }

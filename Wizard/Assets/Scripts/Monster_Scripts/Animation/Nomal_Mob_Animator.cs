@@ -26,31 +26,35 @@ public class Nomal_Mob_Animator : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        isAttack = false;
         animator.SetBool("walk", true);
-        //manager = GetComponent<Mob_controller>();
         controller = gameObject.GetComponent<Mob_controller>();
         temp_speed = controller.Speed;
+        isAttack = false;
         long_atk = false;
     }
 
     private void FixedUpdate()
     {
-        HP = controller.Hp;
 
+        HP = controller.Hp;
+        animationtime();
+        my_Atk();
+    }
+
+    void animationtime()
+    {
         // isAttack가 참이라면 공격 애니메이션 실행
         if (isAttack)
         {
             animator.SetBool("attack", true);
-            controller.Speed = 0;
         }
-        if(!isAttack)
+        if (!isAttack)
         {
             animator.SetBool("attack", false);
             controller.Speed = temp_speed;
         }
         // isDamage가 참이라면 피격 애니메이션 실행
-        if(isDamage)
+        if (isDamage)
         {
             animator.SetBool("damage", true);
             controller.Speed = 0;
@@ -69,20 +73,19 @@ public class Nomal_Mob_Animator : MonoBehaviour
             animator.SetBool("damage", false);
             animator.SetBool("attack", false);
         }
-   
+
         // dead라는 이름의 애니메이션 클립이 끝나면 해당 오브젝트를 삭제한다.
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.dead") &&
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.dead") &&
            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
         {
             Destroy(gameObject);
         }
+
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
             controller.Speed = 0;
         }
-
-        my_Atk();
     }
 
     // 오브젝트와 몬스터의 콜라이더가 충돌시 처리함수
@@ -130,6 +133,7 @@ public class Nomal_Mob_Animator : MonoBehaviour
             long_atk = false;
         }
 
+        //근거리 공격판정
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.3f)
         {
@@ -141,6 +145,7 @@ public class Nomal_Mob_Animator : MonoBehaviour
             short_atk = false;
         }
 
+        // 애니메이션 루프
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
             animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
         {

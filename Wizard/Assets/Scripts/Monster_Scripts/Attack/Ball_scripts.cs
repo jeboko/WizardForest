@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 원거리 몬스터 공격구체 스크립트
 public class Ball_scripts : MonoBehaviour
 {
+    // 플레이어의 좌푤르 받아온다.
     Transform player;
     public float speed;
     Dummy_move player_hp;

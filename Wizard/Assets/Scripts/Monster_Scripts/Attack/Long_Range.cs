@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Long_Range : MonoBehaviour
 {
+    // 공격 오브젝트
     public GameObject attack_ball;
 
     private float time;

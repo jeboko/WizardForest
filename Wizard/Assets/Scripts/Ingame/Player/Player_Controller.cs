@@ -54,6 +54,7 @@ public class Player_Controller : MonoBehaviour
         Anim = Modelling.GetComponent<Animator>(); 
 
         originspeed = move_speed;
+        lookrotation = new Vector3(-10000, 0, 0); // 이후 삭제
     }
 
     void FixedUpdate()

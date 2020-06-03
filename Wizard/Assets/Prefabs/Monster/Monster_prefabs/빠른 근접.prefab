@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &173355799157572025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4209224311213722538}
+  - component: {fileID: 1316003246944876064}
+  - component: {fileID: 298921353217494427}
+  m_Layer: 0
+  m_Name: Attack_Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4209224311213722538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173355799157572025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8865975815157050763}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1316003246944876064
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173355799157572025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &298921353217494427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173355799157572025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73c9fb792d25fd479feed57db2172c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4474779909518198270
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,10 +66,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5956303247693501622}
-  - component: {fileID: 2693978129835512162}
+  - component: {fileID: 4897815542062717516}
   - component: {fileID: 3898852065723067289}
   m_Layer: 0
-  m_Name: Atk_range
+  m_Name: Hit_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,8 +90,8 @@ Transform:
   m_Father: {fileID: 8865975815157050763}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2693978129835512162
-BoxCollider:
+--- !u!135 &4897815542062717516
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -44,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.506817, z: 0.7129574}
-  m_Center: {x: 0, y: 0.24659206, z: -0.1435212}
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!114 &3898852065723067289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,7 +869,6 @@ GameObject:
   - component: {fileID: 1097920380530291614}
   - component: {fileID: 940593250589911186}
   - component: {fileID: 7018268428610275506}
-  - component: {fileID: 8338456533859660269}
   - component: {fileID: -7201546219185264298}
   - component: {fileID: 9213186907127325384}
   - component: {fileID: 4666113746262915046}
@@ -840,6 +896,7 @@ Transform:
   - {fileID: 8865975815157050767}
   - {fileID: 8865975815157050761}
   - {fileID: 5956303247693501622}
+  - {fileID: 4209224311213722538}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -913,19 +970,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08106541, y: 0.15578556, z: 0.047909647}
   m_Center: {x: 0.00052596256, y: 0.07710722, z: 0.004733652}
---- !u!135 &8338456533859660269
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8865975815157084587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 0.06, z: 0}
 --- !u!114 &-7201546219185264298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +989,6 @@ MonoBehaviour:
   hpBarPrefab: {fileID: 5112782707441879583, guid: 319d61e0b21116449ab2a0e847ba6e84,
     type: 3}
   hpBarOffset: {x: 0, y: 3, z: 0}
-  dead_effect: {fileID: 0}
 --- !u!114 &9213186907127325384
 MonoBehaviour:
   m_ObjectHideFlags: 0

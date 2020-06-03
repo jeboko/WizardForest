@@ -88,6 +88,7 @@ public class Nomal_Mob_Animator : MonoBehaviour
         }
     }
 
+    /*
     // 오브젝트와 몬스터의 콜라이더가 충돌시 처리함수
     private void OnTriggerEnter(Collider other)
     {
@@ -117,7 +118,7 @@ public class Nomal_Mob_Animator : MonoBehaviour
             isDamage = false;
         }
     }
-
+    */
 
     private void my_Atk()
     {

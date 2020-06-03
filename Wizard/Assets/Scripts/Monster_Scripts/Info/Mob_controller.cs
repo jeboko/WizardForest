@@ -44,7 +44,12 @@ public class Mob_controller : MonoBehaviour
         hpBarImage.fillAmount = Hp / initHp;
 
         // 죽는 모션 확인용
-        Hp -= 0.03f;
+        //Hp -= 0.1f;
+
+        if(Hp <= 0)
+        {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
     }
 
 

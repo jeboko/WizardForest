@@ -23,7 +23,7 @@ public class Monster_AI : MonoBehaviour
     {
         // "Player"라는 태그를 가진 물체를 따라간다.
         agent.SetDestination(GameObject.FindWithTag("Player").transform.position);
-
+        transform.LookAt(GameObject.FindWithTag("Player").transform);
         agent.speed = mob_speed;
     }
 }

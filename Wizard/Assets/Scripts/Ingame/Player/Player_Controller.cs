@@ -67,12 +67,6 @@ public class Player_Controller : MonoBehaviour
         {
             if (canwalk)
             {
-                Move(h, v);
-
-                Turn(h, v);
-
-                Run();
-
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     if (isruning == false)
@@ -109,66 +103,38 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    void Move(float h, float v)
+    public void Move(float h, float v)
     {
-        if(h == 0 && v == 0)
-        {
-            iswalking = false;
-        }
-        else
-        {
-            iswalking = true;
-            movement.Set(h, 0, v);
-            movement = movement.normalized * move_speed * Time.deltaTime;
-            RB.MovePosition(transform.position + movement);
-        }
+        iswalking = true;
+        movement.Set(h, 0, v);
+        movement = movement.normalized * move_speed * Time.deltaTime;
+        RB.MovePosition(transform.position + movement);
     }
 
-    void Turn(float h, float v)
+    public void Turn(float x, float y, bool shot)
     {
         if (isruning) //달리기 방향으로 전환
         {
             Quaternion newRotation = Quaternion.LookRotation(movement);
             RB.rotation = Quaternion.Slerp(RB.rotation, newRotation, turnspeed * Time.deltaTime);
+
         }
-        else //방향키로 전환
+        else if(x != 0f && y != 0f)
         {
-            if(Input.GetKey(KeyCode.LeftArrow))
-            {
-                lookrotation = new Vector3(-10000, 0, 0);
+            if(shot)
                 Attacker.GetComponent<Attack_Controller>().Normal_shot();
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                lookrotation = new Vector3(10000, 0, 0);
-                Attacker.GetComponent<Attack_Controller>().Normal_shot();
-            }
-            else if (Input.GetKey(KeyCode.UpArrow))
-            {
-                lookrotation = new Vector3(0, 0, 10000);
-                Attacker.GetComponent<Attack_Controller>().Normal_shot();
-            }
-            else if (Input.GetKey(KeyCode.DownArrow))
-            {
-                lookrotation = new Vector3(0, 0, -10000);
-                Attacker.GetComponent<Attack_Controller>().Normal_shot();
-            }
-            Quaternion newRotation = Quaternion.LookRotation(lookrotation);
-            RB.rotation = Quaternion.Slerp(RB.rotation, newRotation, turnspeed * Time.deltaTime);
+            transform.eulerAngles = new Vector3(0, Mathf.Atan2(x, y) * Mathf.Rad2Deg, 0); 
         }
     }
 
-    void Run()
+    public void Run(bool run)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (run && canrun)
         {
-            if (canrun)
-            {
-                move_speed = run_speed;
-                isruning = true;
-            }
+            move_speed = run_speed;
+            isruning = true;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || canrun == false)
+        else if (run == false || canrun == false)
         {
             move_speed = originspeed;
             isruning = false;
@@ -184,13 +150,13 @@ public class Player_Controller : MonoBehaviour
     void KnockBack(GameObject enemy)
     {
         knockback_way = (enemy.transform.position - transform.position);
-        RB.AddForce(knockback_way * knockback_power * -1f);
+        RB.velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * knockback_power * -1f;
         canwalk = false;
     }
 
     public void Death()
     {
-        Anim.SetBool("death", isdeath);
+        Anim.SetBool("death", true);
     }
 
     public void Skill_anim(int anim_num)
@@ -226,7 +192,7 @@ public class Player_Controller : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            Player_UI.GetComponent<Player_UI_Controller>().Demage();
+            Player_UI.GetComponent<Player_UI_Controller>().col_dam();
             Anim.SetTrigger("attacked");
             KnockBack(collision.gameObject);
         }
@@ -247,18 +213,30 @@ public class Player_Controller : MonoBehaviour
             }
             else
             {
-                if (collision.gameObject.GetComponent<ItemController>().item_num == 5)
+                if (collision.gameObject.GetComponent<ItemController>().item_num == 5) // hp회복
                     Player_UI.GetComponent<Player_UI_Controller>().HealHP(25);
-                else if (collision.gameObject.GetComponent<ItemController>().item_num == 6)
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 6) // 마나 회복
                     Player_UI.GetComponent<Player_UI_Controller>().HealMP(25);
-                else if (collision.gameObject.GetComponent<ItemController>().item_num == 7)
+                else if (collision.gameObject.GetComponent<ItemController>().item_num == 7) // 쉴드
                 {
                     collision.gameObject.transform.parent = gameObject.transform;
                     collision.gameObject.transform.position = transform.position;
                     Player_UI_Controller.shieldON = true;
+                    Player_UI_Controller.ori_hp = Player_UI.GetComponent<Player_UI_Controller>().HP_amount;
                 }
             }
             collision.gameObject.GetComponent<ItemController>().Hit_Player();
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Mob_Atk")
+        {
+            Anim.SetTrigger("attacked");
+            KnockBack(other.gameObject);
+            print("dd");
+        }
+
     }
 } 

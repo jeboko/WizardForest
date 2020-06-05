@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet_Controller : MonoBehaviour
 {
+    public int bullet_num;
     public GameObject hit;
     public GameObject OBJ;
     public GameObject light;
@@ -54,12 +55,23 @@ public class Bullet_Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "item")
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "item" && other.gameObject.tag != "Range")
         {
             if(NO_HIT == false)
             {
                 Destroy(gameObject, hit_time);
                 Hit();
+            }
+        }
+
+        if(other.gameObject.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<Mob_controller>().Hp -= damage;
+            if (bullet_num == 4)
+            {
+                Vector3 knockback_way;
+                knockback_way = (transform.position - other.gameObject.transform.position);
+                other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * 6f * -1f;
             }
         }
     }

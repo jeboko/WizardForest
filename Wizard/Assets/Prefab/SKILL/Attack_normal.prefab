@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet_num: 1
   hit: {fileID: 6151614173554066147}
   OBJ: {fileID: 4122567785214106978}
   light: {fileID: 294021080061865208}
@@ -86,7 +87,10 @@ MonoBehaviour:
   destroy_time: 5
   hit_time: 1
   light_dec: 0.4
+  boom_radius: 0
   isskill: 0
+  isboom: 0
+  boom_dec: 0
   islight: 1
   NO_HIT: 0
 --- !u!1 &294021080061865208

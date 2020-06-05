@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet_num: 3
   hit: {fileID: 7897491456255176058}
   OBJ: {fileID: 6662194229730525433}
   light: {fileID: 0}

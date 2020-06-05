@@ -4802,6 +4802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet_num: 5
   hit: {fileID: 3573401950984937997}
   OBJ: {fileID: 2221424925115590747}
   light: {fileID: 0}

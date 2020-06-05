@@ -18,13 +18,16 @@ public class Player_UI_Controller : MonoBehaviour
     public Image HP;
     public float HP_amount;
     float fullHP;
-    public float HP_dec; //hp감소량
+    public float HP_dec; //몬스터와 충돌시
 
     //Mana
     public Image Mana;
     public static float Mana_amount = 100;
     public float mana_inc; //마나 회복 속도
     float fullMana;
+
+    //shield
+    public static float ori_hp;
 
     public static bool shieldON;
     float time;
@@ -45,15 +48,14 @@ public class Player_UI_Controller : MonoBehaviour
             Stemina();
             HealthPoint();
             ManaPoint();
-
-            if (shieldON)
+            shield();
+            
+            if (HP_amount <= 0)
             {
-                time += Time.deltaTime;
-                if(time > 8)
-                {
-                    shieldON = false;
-                    time = 0;
-                }
+                Player_Controller.isdeath = true;
+                player.GetComponent<Player_Controller>().Death();
+                print("dd");
+                HealthPoint();
             }
         }
     }
@@ -98,17 +100,26 @@ public class Player_UI_Controller : MonoBehaviour
         }
     }
 
-    public void Demage()
+    void shield()
     {
-        if(shieldON == false)
-            HP_amount -= HP_dec;
-        if (HP_amount <= 0)
+        if (shieldON)
         {
-            Player_Controller.isdeath = true;
-            player.GetComponent<Player_Controller>().Death();
-            HealthPoint();
+            time += Time.deltaTime;
+            if (time > 8)
+            {
+                shieldON = false;
+                time = 0;
+            }
+            HP_amount = ori_hp;
         }
     }
+
+    public void col_dam()
+    {
+        if (shieldON == false)
+            HP_amount -= HP_dec;
+    }
+
 
     public void HealHP(float amount)
     {

@@ -9733,6 +9733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet_num: 2
   hit: {fileID: 227045200736091630}
   OBJ: {fileID: 8599104060396786563}
   light: {fileID: 0}

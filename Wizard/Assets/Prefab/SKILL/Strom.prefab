@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145b475fb5e0514e819ff45d0dae903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet_num: 4
   hit: {fileID: 0}
   OBJ: {fileID: 0}
   light: {fileID: 0}
   speed: 1.5
-  damage: 50
+  damage: 0
   start_time: 0
   destroy_time: 5
   hit_time: 0
@@ -72,7 +73,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0.33, z: 0}
 --- !u!54 &3997869823646171341
 Rigidbody:

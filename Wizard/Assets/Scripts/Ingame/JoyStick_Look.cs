@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class JoyStick_Look : MonoBehaviour
 {
     public Transform Player;
+    public GameObject Attacker;
 
     public Transform Stick;
 
@@ -14,9 +15,13 @@ public class JoyStick_Look : MonoBehaviour
     private float Radius;
 
     bool shot;
+    bool skill_enable;
+
+    float time;
 
     void Start()
     {
+        skill_enable = true;
         Radius = GetComponent<RectTransform>().sizeDelta.y * 0.5f;
         StickFirstPos = Stick.transform.position;
 
@@ -30,6 +35,15 @@ public class JoyStick_Look : MonoBehaviour
         if (Player_Controller.canwalk)
         {
             Player.GetComponent<Player_Controller>().Turn(JoyVec.x, JoyVec.y, shot);
+        }
+        if(skill_enable == false)
+        {
+            time += Time.deltaTime;
+            if(time >= 0.3f)
+            {
+                time = 0;
+                skill_enable = true;
+            }
         }
     }
 
@@ -50,6 +64,12 @@ public class JoyStick_Look : MonoBehaviour
         else
         {
             Stick.position = StickFirstPos + JoyVec * Radius;
+            if (Player_Controller.isruning == false && skill_enable)
+            {
+                Attacker.GetComponent<Attack_Controller>().Skill();
+                skill_enable = false;
+            }
+            shot = false;
         }
     }
 

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Attack_Controller : MonoBehaviour
 {
     public List<Skills> skill_list = new List<Skills>();
     public GameObject player;
+    public Image joystick_image;
 
     float time;
 
@@ -55,6 +57,7 @@ public class Attack_Controller : MonoBehaviour
     public void Load_Skill(int skill_num)
     {
         skill = skill_list[skill_num];
+        joystick_image.sprite = skill.skill_image;
     }
 }
 
@@ -66,6 +69,7 @@ public class Skills
     public int skill_anim;
     public float skill_time; //발사하고 움직일 수 있는 시간
     public float skill_usetime; //스킬 발사하는 시간
+    public Sprite skill_image;
 
     public Skills (Skills skill)
     {
@@ -73,5 +77,6 @@ public class Skills
         this.skill_mana = skill.skill_mana;
         this.skill_obj = skill.skill_obj;
         this.skill_time = skill.skill_usetime;
+        this.skill_image = skill.skill_image;
     }
 }

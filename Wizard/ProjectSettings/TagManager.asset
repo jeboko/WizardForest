@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Mob_Atk
   - Range
+  - Limit
   layers:
   - Default
   - TransparentFX

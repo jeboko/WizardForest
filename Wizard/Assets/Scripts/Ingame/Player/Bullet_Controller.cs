@@ -55,7 +55,7 @@ public class Bullet_Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "item" && other.gameObject.tag != "Range")
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "item" && other.gameObject.tag != "Range" && other.gameObject.tag != "Bullet")
         {
             if(NO_HIT == false)
             {

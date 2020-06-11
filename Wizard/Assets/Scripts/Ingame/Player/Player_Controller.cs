@@ -14,6 +14,8 @@ public class Player_Controller : MonoBehaviour
     public GameObject Attacker;
     public GameObject Modelling;
 
+    public GameObject warnning;
+
     //Skill
     float time;
     public static float skill_time;
@@ -237,6 +239,16 @@ public class Player_Controller : MonoBehaviour
             KnockBack(other.gameObject);
             print("dd");
         }
-
+        if(other.gameObject.tag == "Limit")
+        {
+            warnning.SetActive(true);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Limit")
+        {
+            warnning.SetActive(false);
+        }
     }
 } 

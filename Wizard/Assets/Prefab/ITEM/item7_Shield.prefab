@@ -14315,7 +14315,6 @@ MonoBehaviour:
   hit: {fileID: 6371066328621358036}
   ishit: 1
   destroy_time: 9
-  player: {fileID: 0}
 --- !u!135 &1488458456266390141
 SphereCollider:
   m_ObjectHideFlags: 0

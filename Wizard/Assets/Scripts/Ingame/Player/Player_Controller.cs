@@ -235,7 +235,7 @@ public class Player_Controller : MonoBehaviour
         {
             Anim.SetTrigger("attacked");
             KnockBack(other.gameObject);
-            print("dd");
+
         }
 
     }

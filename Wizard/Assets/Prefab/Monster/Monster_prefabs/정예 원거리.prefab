@@ -10798,11 +10798,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_object:
-  - item: {fileID: 1990956558407851238, guid: 543bc7daa27733a4c99badf7c389c22a, type: 3}
-  - item: {fileID: 8079746993617237086, guid: 1aa6302245fdf724d9409a11700e42fb, type: 3}
-  - item: {fileID: 9155937306337754028, guid: eac409da3f8ebc84c915c940e70b9e30, type: 3}
-  i_num: 0
+  - item: {fileID: 4683078896818094654, guid: 9c141dbb23a320743a80801156954b81, type: 3}
+  - item: {fileID: 1211168906511893726, guid: 3f01468cd86f6d349b7462107555919b, type: 3}
+  - item: {fileID: 5366563669784305051, guid: 0a18f1c5b99541446b1f798c8683919e, type: 3}
+  - item: {fileID: 2945561286328362228, guid: 1cc8e08a042d7af40bec5bf505ee203f, type: 3}
+  - item: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf, type: 3}
+  i_num: 6
   temp: {fileID: 0}
+  drop_range: 7
+  isdorp: 0
 --- !u!1 &4565352222348646210
 GameObject:
   m_ObjectHideFlags: 0

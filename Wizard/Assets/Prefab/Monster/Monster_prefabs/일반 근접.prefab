@@ -359,11 +359,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_object:
-  - item: {fileID: 1990956558407851238, guid: 543bc7daa27733a4c99badf7c389c22a, type: 3}
-  - item: {fileID: 8079746993617237086, guid: 1aa6302245fdf724d9409a11700e42fb, type: 3}
-  - item: {fileID: 9155937306337754028, guid: eac409da3f8ebc84c915c940e70b9e30, type: 3}
-  i_num: 0
+  - item: {fileID: 4683078896818094654, guid: 9c141dbb23a320743a80801156954b81, type: 3}
+  - item: {fileID: 1211168906511893726, guid: 3f01468cd86f6d349b7462107555919b, type: 3}
+  - item: {fileID: 5366563669784305051, guid: 0a18f1c5b99541446b1f798c8683919e, type: 3}
+  - item: {fileID: 2945561286328362228, guid: 1cc8e08a042d7af40bec5bf505ee203f, type: 3}
+  - item: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf, type: 3}
+  i_num: 6
   temp: {fileID: 0}
+  drop_range: 7
+  isdorp: 0
 --- !u!114 &4953799884680514905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,7 +1294,7 @@ GameObject:
   - component: {fileID: 1422199862709229660}
   m_Layer: 0
   m_Name: Atk_Range
-  m_TagString: Untagged
+  m_TagString: Range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1303,8 +1307,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3406023122757690677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.12, z: 0}
+  m_LocalScale: {x: 1.1597, y: 1.1597, z: 1.1597}
   m_Children: []
   m_Father: {fileID: 2856114193637022957}
   m_RootOrder: 3
@@ -1331,7 +1335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3406023122757690677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e73c9fb792d25fd479feed57db2172c5, type: 3}
+  m_Script: {fileID: 11500000, guid: cf9ae06be705aea4fbdd9cdded581e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5331896523787835938
@@ -1360,8 +1364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5331896523787835938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0}
+  m_LocalScale: {x: 1.2159, y: 1.2159, z: 1.2159}
   m_Children:
   - {fileID: 1378027747276643995}
   m_Father: {fileID: 2856114193637022957}

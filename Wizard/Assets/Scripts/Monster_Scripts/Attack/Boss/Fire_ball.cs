@@ -43,5 +43,9 @@ public class Fire_ball : MonoBehaviour
             player_hp.HP_amount = player_hp.HP_amount - damage;
             Destroy(gameObject);
         }
+        if (other.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }

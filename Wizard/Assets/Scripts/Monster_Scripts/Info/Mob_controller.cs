@@ -44,7 +44,7 @@ public class Mob_controller : MonoBehaviour
         hpBarImage.fillAmount = Hp / initHp;
 
         // 죽는 모션 확인용
-        //Hp -= 0.03f;
+        //Hp -= 0.3f;
 
         if(Hp <= 0)
         {

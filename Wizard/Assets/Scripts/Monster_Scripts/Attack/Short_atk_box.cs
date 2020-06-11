@@ -30,12 +30,11 @@ public class Short_atk_box : MonoBehaviour
         }
         catch(NullReferenceException ex)
         {
-            Debug.Log("null");
         }
 
         if(other == null)
         {
-            Debug.Log("null");
+
         }
 
         else return;

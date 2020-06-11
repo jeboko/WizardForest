@@ -11,9 +11,9 @@ public class Boss_Monster_Animation : MonoBehaviour
     // Hp값을 불러올 스크립트
     private Mob_controller controller;
     // 지속적으로 업데이트 되는 HP변수
-    [HideInInspector] public float HP;
+    public float HP;
     // 기본HP값을 저장할 HP변수
-    [HideInInspector] public float tempHP;
+    public float tempHP;
 
     //몬스터 속도
     private Mob_Manager_Scripts manager;
@@ -29,11 +29,11 @@ public class Boss_Monster_Animation : MonoBehaviour
     // 플레이어의 공격에 피격되었는지 확인할 변수
     private bool isDamage;
     // 날고있는지 파악할 변수
-    private bool isFly;
+    public bool isFly;
 
     // 플레이어의 좌표값을 받아올 변수들
     private GameObject Player;
-    private float Distance_B_P;
+    [HideInInspector] public float Distance_B_P;
 
     public bool fireball_atk;
     public bool bite_atk;
@@ -47,12 +47,13 @@ public class Boss_Monster_Animation : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         init_Ani();
         init_Speed = manager.deck[Mob_num - 1].speed;
-        tempHP = controller.Hp;
+        //tempHP = controller.Hp;
     }
 
     private void FixedUpdate()
     {
         HP = controller.Hp;
+        tempHP = manager.deck[Mob_num - 1].Hp;
         Boss_Animation();
         my_Atk();
         Boss_Fly();
@@ -221,7 +222,7 @@ public class Boss_Monster_Animation : MonoBehaviour
         }
     }
 
-
+    /*
     // 오브젝트와 몬스터의 콜라이더가 충돌시 처리함수
     private void OnTriggerStay(Collider other)
     {
@@ -276,5 +277,6 @@ public class Boss_Monster_Animation : MonoBehaviour
             }
         }
     }
+    */
 }
 

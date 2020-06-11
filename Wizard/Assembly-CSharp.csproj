@@ -115,7 +115,9 @@
     <Compile Include="Assets\Scripts\Scene_Manager.cs" />
     <Compile Include="Assets\Scripts\inven\BuildObj.cs" />
     <Compile Include="Assets\Scripts\inven\Player.cs" />
+    <Compile Include="Assets\Scripts\inven\buildButtonSc.cs" />
     <Compile Include="Assets\Scripts\inven\gamemanager.cs" />
+    <Compile Include="Assets\Scripts\inven\move_temp.cs" />
     <Compile Include="Assets\Scripts\inven\pauseUI.cs" />
     <None Include="Assets\Assets\BackGround\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\Assets\Player\Combat Magic VFX Vol.2\shaders\Special-Bones-Glowing.shader" />

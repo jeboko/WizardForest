@@ -6,14 +6,19 @@ using UnityEngine.SceneManagement;
 public class pauseUI : MonoBehaviour
 {
     private bool pauseOn = false;
+    private bool buildOn = false;
+
     private GameObject ingamePanel;
     private GameObject pausePanel;
+    private GameObject buildPanel;
 
     private void Awake()
     {
-        ingamePanel = GameObject.Find("Canvas").transform.FindChild("pauseButton").gameObject;
+        ingamePanel = GameObject.Find("Canvas").transform.Find("pauseButton").gameObject;
 
-        pausePanel = GameObject.Find("Canvas").transform.FindChild("pauseScreen").gameObject;
+        pausePanel = GameObject.Find("Canvas").transform.Find("pauseScreen").gameObject;
+
+        buildPanel = GameObject.Find("Canvas").transform.Find("buildScreen").gameObject;
     }
 
     public void activePause()
@@ -22,6 +27,7 @@ public class pauseUI : MonoBehaviour
         {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
+            buildPanel.SetActive(false);
             ingamePanel.SetActive(false);
         }
         else
@@ -47,6 +53,22 @@ public class pauseUI : MonoBehaviour
         Debug.Log("게임종료");
         Application.Quit();
 
+    }
+
+    public void activebuild()
+    {
+        if (!buildOn)
+        {
+            
+            buildPanel.SetActive(true);
+        }
+        else
+        {
+
+            buildPanel.SetActive(false);
+        }
+
+        buildOn = !buildOn;
     }
 
 }

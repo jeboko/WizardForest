@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - wood
+  - rock
+  - baricate
+  - fire_barrel
   layers:
   - Default
   - TransparentFX

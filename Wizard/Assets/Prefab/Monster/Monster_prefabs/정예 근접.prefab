@@ -501,7 +501,7 @@ MonoBehaviour:
   - item: {fileID: 5366563669784305051, guid: 0a18f1c5b99541446b1f798c8683919e, type: 3}
   - item: {fileID: 2945561286328362228, guid: 1cc8e08a042d7af40bec5bf505ee203f, type: 3}
   - item: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf, type: 3}
-  i_num: 6
+  i_num: 5
   temp: {fileID: 0}
   drop_range: 7
   isdorp: 0

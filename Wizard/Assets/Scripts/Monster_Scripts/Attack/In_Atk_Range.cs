@@ -5,18 +5,37 @@ using UnityEngine;
 public class In_Atk_Range : MonoBehaviour
 {
     Nomal_Mob_Animator N_Mob_ani;
+    Animator animator;
+    public float atk_delay;
+    public float atK_delay_time;
     // Start is called before the first frame update
     void Start()
     {
+        atk_delay = 10;
         N_Mob_ani = gameObject.transform.parent.GetComponent<Nomal_Mob_Animator>();
+        animator = gameObject.transform.parent.GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-            N_Mob_ani.isAttack = true;
+            if (atk_delay >= atK_delay_time)
+            {
+                N_Mob_ani.isAttack = true;
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+                {
+                    atk_delay = 0;
+                }
+            }
+
+            if (atk_delay < atK_delay_time)
+            {
+                N_Mob_ani.isAttack = false;
+                atk_delay += Time.deltaTime;
+            }
         }
 
         if (other.tag == "Damage")

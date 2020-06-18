@@ -151,7 +151,9 @@ public class Player_Controller : MonoBehaviour
 
     void KnockBack(GameObject enemy)
     {
-        knockback_way = (enemy.transform.position - transform.position);
+        float x;
+        knockback_way = (enemy.transform.position - gameObject.transform.position);
+        knockback_way = knockback_way.normalized;
         RB.velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * knockback_power * -1f;
         canwalk = false;
     }
@@ -244,6 +246,7 @@ public class Player_Controller : MonoBehaviour
             warnning.SetActive(true);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Limit")

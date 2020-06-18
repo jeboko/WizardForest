@@ -10,6 +10,7 @@ public class Mob_controller : MonoBehaviour
     // 리스트에 입력한 스탯정보를 받아온다.
     private Mob_Manager_Scripts manager;
     private Monster_AI navimash_controller;
+    Scene_Manager scene_Manager;
     // 몹리스트의 몹 번호
     public int Mob_num;
     public float Hp;
@@ -28,6 +29,7 @@ public class Mob_controller : MonoBehaviour
     {
         manager = GameObject.Find("Monster_Manager").GetComponent<Mob_Manager_Scripts>();
         navimash_controller = gameObject.GetComponent<Monster_AI>();
+        scene_Manager = GameObject.Find("GameManager").GetComponent<Scene_Manager>();
         // num번째 정보를 불러온다.
         Hp = manager.deck[Mob_num-1].Hp;
         initHp = manager.deck[Mob_num - 1].Hp; ;
@@ -43,8 +45,10 @@ public class Mob_controller : MonoBehaviour
         navimash_controller.mob_speed = Speed;
         hpBarImage.fillAmount = Hp / initHp;
 
-        // 죽는 모션 확인용
-        //Hp -= 0.3f;
+        if(scene_Manager.day_night)
+        {
+           Hp = 0;
+        }
 
         if(Hp <= 0)
         {

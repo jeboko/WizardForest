@@ -9,7 +9,10 @@ public class Scene_Manager : MonoBehaviour
     public GameObject night_image;
     public GameObject dayLight;
     public GameObject nightLight;
-    bool day_night;
+
+    public GameObject spwaner;
+
+    public bool day_night;
     int day_count;
 
     public float day_time;
@@ -37,7 +40,9 @@ public class Scene_Manager : MonoBehaviour
                 day_night = false;
                 time = 0;
             }
+            spwaner.SetActive(false);
         }
+
         else
         {
             time += Time.deltaTime;
@@ -53,6 +58,7 @@ public class Scene_Manager : MonoBehaviour
                 time = 0;
                 day_count++;
             }
+            spwaner.SetActive(true);
         }
     }
 }

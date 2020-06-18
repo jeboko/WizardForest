@@ -57,6 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9ae06be705aea4fbdd9cdded581e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atk_delay: 0
+  atK_delay_time: 3
 --- !u!1 &4474779909518198270
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,7 +72,7 @@ GameObject:
   - component: {fileID: 3898852065723067289}
   m_Layer: 0
   m_Name: Hit_Box
-  m_TagString: Untagged
+  m_TagString: Mob_Atk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

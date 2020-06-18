@@ -10,15 +10,23 @@ public class Scene_Manager : MonoBehaviour
     public GameObject dayLight;
     public GameObject nightLight;
     bool day_night;
-    int day_count;
+    public Text Days;
+    public static int day_count;
 
     public float day_time;
     public float night_time;
     float time;
+    
+    public static bool isdeath;
+    float death_time;
+    public GameObject Death_Option;
 
     void Start()
     {
         day_night = true;
+        day_count = 1;
+        isdeath = false;
+        death_time = 0;
     }
 
     void FixedUpdate()
@@ -52,6 +60,19 @@ public class Scene_Manager : MonoBehaviour
                 day_night = true;
                 time = 0;
                 day_count++;
+                Days.text = "D - " + day_count.ToString();
+            }
+        }
+
+        if (isdeath)
+        {
+            print(death_time);
+            death_time += Time.deltaTime;
+            if(death_time > 3f)
+            {
+                Death_Option.SetActive(true);
+                Time.timeScale = 0;
+                isdeath = false;
             }
         }
     }

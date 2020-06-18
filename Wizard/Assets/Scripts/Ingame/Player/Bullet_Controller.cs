@@ -73,6 +73,10 @@ public class Bullet_Controller : MonoBehaviour
                 knockback_way = (transform.position - other.gameObject.transform.position);
                 other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * 6f * -1f;
             }
+            else if(bullet_num == 5)
+            {
+                other.gameObject.GetComponent<Mob_controller>().Speed *= 0.3f;
+            }
         }
     }
 

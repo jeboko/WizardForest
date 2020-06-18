@@ -32,6 +32,7 @@ public class Player_UI_Controller : MonoBehaviour
     public static bool shieldON;
     float time;
 
+
     void Start()
     {
         shieldON = false;
@@ -53,8 +54,8 @@ public class Player_UI_Controller : MonoBehaviour
             if (HP_amount <= 0)
             {
                 Player_Controller.isdeath = true;
+                Scene_Manager.isdeath = true;
                 player.GetComponent<Player_Controller>().Death();
-                print("dd");
                 HealthPoint();
             }
         }

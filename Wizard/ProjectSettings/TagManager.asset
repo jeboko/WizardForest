@@ -8,6 +8,9 @@ TagManager:
   - rock
   - baricate
   - fire_barrel
+  - B_flower
+  - R_flower
+  - Y_flower
   layers:
   - Default
   - TransparentFX

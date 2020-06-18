@@ -7,9 +7,13 @@ public class Near_Mob_Die : MonoBehaviour
     public GameObject dead_Effect;
     private Mob_controller controller;
     private bool isDie;
+    public float effect_time;
+
+    float time;
     // Start is called before the first frame update
     void Start()
     {
+        time = 0;
         isDie = true;
         controller = gameObject.GetComponent<Mob_controller>();
     }
@@ -19,8 +23,12 @@ public class Near_Mob_Die : MonoBehaviour
     {
         if(controller.Hp <= 0 && isDie)
         {
-            Instantiate(dead_Effect, gameObject.transform.position, Quaternion.identity);
-            isDie = false;
+            time += Time.deltaTime;
+            if(time >= effect_time)
+            {
+                Instantiate(dead_Effect, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1f, gameObject.transform.position.z), Quaternion.identity);
+                isDie = false;
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class Near_die_Spine : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time > 1)
+        if(time > 3)
         {
             Destroy(gameObject);
         }

@@ -82,7 +82,7 @@ MonoBehaviour:
   OBJ: {fileID: 4122567785214106978}
   light: {fileID: 294021080061865208}
   speed: 10
-  damage: 40
+  damage: 20
   start_time: 0
   destroy_time: 5
   hit_time: 1

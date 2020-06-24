@@ -35,6 +35,24 @@ public class buildButtonSc : MonoBehaviour
         {
             GameObject.Find("firebarrel_B").GetComponent<Button>().interactable = true;
         }
+
+        if (GameObject.Find("Player").GetComponent<Player>().yellow_count == 0)
+        {
+            GameObject.Find("poison_B").GetComponent<Button>().interactable = false;
+        }
+        else if (GameObject.Find("Player").GetComponent<Player>().yellow_count >= 1)
+        {
+            GameObject.Find("poison_B").GetComponent<Button>().interactable = true;
+        }
+
+        if (GameObject.Find("Player").GetComponent<Player>().blue_count == 0)
+        {
+            GameObject.Find("slow_B").GetComponent<Button>().interactable = false;
+        }
+        else if (GameObject.Find("Player").GetComponent<Player>().blue_count >= 1)
+        {
+            GameObject.Find("slow_B").GetComponent<Button>().interactable = true;
+        }
     }
 
     public void createBaricate()
@@ -46,6 +64,17 @@ public class buildButtonSc : MonoBehaviour
     {
         GameObject.Find("Player").GetComponent<Player>().create_F();
     } // 설치 UI의 불꽃통 버튼 함수
+
+    public void createPoison_Trap()
+    {
+        GameObject.Find("Player").GetComponent<Player>().create_P();
+    } // 설치 UI의 독 함정 버튼 함수
+
+    public void createSlowTrap()
+    {
+        GameObject.Find("Player").GetComponent<Player>().create_S();
+    } // 설치 UI의 이감 함정 버튼 함수
+
 
     public void complete_Build()
     {

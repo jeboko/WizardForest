@@ -11,6 +11,8 @@ TagManager:
   - B_flower
   - R_flower
   - Y_flower
+  - poison_trap
+  - slow_trap
   layers:
   - Default
   - TransparentFX

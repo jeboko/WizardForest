@@ -7,10 +7,13 @@ public class pauseUI : MonoBehaviour
 {
     private bool pauseOn = false;
     private bool buildOn = false;
+    private bool invenOn = false;
+
 
     private GameObject ingamePanel;
     private GameObject pausePanel;
     private GameObject buildPanel;
+    private GameObject invenpanel;
 
     private void Awake()
     {
@@ -19,6 +22,8 @@ public class pauseUI : MonoBehaviour
         pausePanel = GameObject.Find("Canvas").transform.Find("pauseScreen").gameObject;
 
         buildPanel = GameObject.Find("Canvas").transform.Find("buildScreen").gameObject;
+
+        invenpanel = GameObject.Find("Canvas").transform.Find("inventory").gameObject;
     }
 
     public void activePause()
@@ -69,6 +74,22 @@ public class pauseUI : MonoBehaviour
         }
 
         buildOn = !buildOn;
+    }
+
+    public void activeinven()
+    {
+        if (!invenOn)
+        {
+
+            invenpanel.SetActive(true);
+        }
+        else
+        {
+
+            invenpanel.SetActive(false);
+        }
+
+        invenOn = !invenOn;
     }
 
 }

@@ -27,15 +27,15 @@ public class Player : MonoBehaviour
 
     public GameObject baricate;
     public GameObject fire_b;
+    public GameObject poison_T;
+    public GameObject slow_T;
     //생성할 건설 오브젝트
 
     public GameObject build_checker;
 	public GameObject tempo;
     private GameObject tempo2;
-    private GameObject NULL1;
 
     //플레이어가 임시로 설치할 건물을 들고있을 때 그 건물을 저장할 오브젝트 변수
-    // NULL1은 건설 오브젝트를 취소할 때 들고있는 오브젝트를 취소하기 위한 공백 변수
 
     private bool building_state = false;
 	//플레이어가 이미 건설 준비중이면 새로운 오브젝트를 손에 들지 못하게 하기 위한 불 변수
@@ -132,6 +132,26 @@ public class Player : MonoBehaviour
                 building_state = false;
             }
 
+            else if (tempo.tag == "slow_trap")
+            {
+
+                tempo2 = Instantiate(slow_T, build_checker.transform.position, gameObject.transform.rotation);
+                Destroy(tempo);
+                blue_count--;
+                tempo2.GetComponent<BuildObj>().state = true;
+                building_state = false;
+            }
+
+            else if (tempo.tag == "poison_trap")
+            {
+
+                tempo2 = Instantiate(poison_T, build_checker.transform.position, gameObject.transform.rotation);
+                Destroy(tempo);
+                yellow_count--;
+                tempo2.GetComponent<BuildObj>().state = true;
+                building_state = false;
+            }
+
         }
 
         else
@@ -161,6 +181,31 @@ public class Player : MonoBehaviour
             Instantiate(fire_b, build_checker.transform.position, Quaternion.identity).transform.parent = build_checker.transform;
             tempo = transform.Find("build_checker").transform.Find("fire_barrel(Clone)").gameObject;
             
+        }
+    }
+
+    public void create_S()// 건설 준비 버튼(이감 통)
+    {
+
+        if (building_state == false) // 설치 준비
+        {
+            building_state = true;
+            Instantiate(slow_T, build_checker.transform.position, Quaternion.identity).transform.parent = build_checker.transform;
+            tempo = transform.Find("build_checker").transform.Find("slow_trap(Clone)").gameObject;
+
+        }
+    }
+
+
+    public void create_P()// 건설 준비 버튼(독 함정)
+    {
+
+        if (building_state == false) // 설치 준비
+        {
+            building_state = true;
+            Instantiate(poison_T, build_checker.transform.position, Quaternion.identity).transform.parent = build_checker.transform;
+            tempo = transform.Find("build_checker").transform.Find("posion_trap(Clone)").gameObject;
+
         }
     }
 

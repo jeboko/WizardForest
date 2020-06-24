@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fire_ball : MonoBehaviour
 {
+    public GameObject Hit_Effect;
     Transform player;
     public float speed;
     Player_UI_Controller player_hp;
@@ -40,6 +41,7 @@ public class Fire_ball : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Instantiate(Hit_Effect, gameObject.transform.position, Quaternion.identity);
             player_hp.HP_amount = player_hp.HP_amount - damage;
             Destroy(gameObject);
         }

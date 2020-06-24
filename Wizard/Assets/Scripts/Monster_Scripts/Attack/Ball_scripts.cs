@@ -9,6 +9,7 @@ public class Ball_scripts : MonoBehaviour
     Transform player;
     public float speed;
     Player_UI_Controller player_hp;
+    public GameObject Hit_Effect;
     public float damage;
 
 
@@ -42,6 +43,7 @@ public class Ball_scripts : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Instantiate(Hit_Effect, gameObject.transform.position, Quaternion.identity);
             player_hp.HP_amount = player_hp.HP_amount - damage;
             Destroy(gameObject);
         }

@@ -17,7 +17,7 @@ public class Player_UI_Controller : MonoBehaviour
     //HealthPoint
     public Image HP;
     public float HP_amount;
-    float fullHP;
+    public float fullHP;
     public float HP_dec; //몬스터와 충돌시
 
     //Mana

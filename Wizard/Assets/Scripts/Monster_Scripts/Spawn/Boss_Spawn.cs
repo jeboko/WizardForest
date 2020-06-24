@@ -5,21 +5,37 @@ using UnityEngine;
 public class Boss_Spawn : MonoBehaviour
 {
     public GameObject Boss;
+    Scene_Manager timer;
 
-    private int boss_num;
+    private float boss_num;
+    private float boss_time;
     // Start is called before the first frame update
     void Start()
     {
+        timer = GameObject.Find("GameManager").GetComponent<Scene_Manager>();
         boss_num = 0;
+        boss_time = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(boss_num == 0)
+        if(timer.day_count % 3 == 0)
         {
-            Instantiate(Boss, new Vector3(0.0f, 1.0f, 0.0f), Quaternion.identity);
-            boss_num++;
+            boss_time = timer.night_time / 2;
+            if (!timer.day_night)
+            {
+                if (timer.time >= boss_time && boss_num == 0)
+                {
+                    Instantiate(Boss, gameObject.transform.position, Quaternion.identity);
+                    boss_num++;
+                }
+            }
+
+        }
+        if (timer.day_night)
+        {
+            boss_num = 0;
         }
     }
 }

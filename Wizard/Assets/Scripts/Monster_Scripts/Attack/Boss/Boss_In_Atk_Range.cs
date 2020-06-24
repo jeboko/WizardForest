@@ -5,11 +5,16 @@ using UnityEngine;
 public class Boss_In_Atk_Range : MonoBehaviour
 {
     Boss_Monster_Animation N_Mob_ani;
+    Animator animator;
+
+    private float atk_delay;
+    public float atK_delay_time;
     // Start is called before the first frame update
     void Start()
     {
+        atk_delay = 10;
         N_Mob_ani = gameObject.transform.parent.GetComponent<Boss_Monster_Animation>();
-        
+        animator = gameObject.transform.parent.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,27 +24,63 @@ public class Boss_In_Atk_Range : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                if (N_Mob_ani.Distance_B_P < 6f)
+                if (atk_delay >= atK_delay_time)
                 {
-                    N_Mob_ani.isAttack_C = true;
-                    N_Mob_ani.isAttack_F = false;
+                    if (N_Mob_ani.Distance_B_P < 6f)
+                    {
+                        N_Mob_ani.isAttack_C = true;
+                        N_Mob_ani.isAttack_F = false;
+                        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.attack") &&
+                            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+                        {
+                            atk_delay = 0;
+                        }
+                    }
+
+                    if (N_Mob_ani.Distance_B_P >= 6f)
+                    {
+                        N_Mob_ani.isAttack_F = true;
+                        N_Mob_ani.isAttack_C = false;
+                        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.fireball_ground") &&
+                            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+                        {
+                            atk_delay = 0;
+                        }
+                    }
                 }
 
-                if (N_Mob_ani.Distance_B_P >= 6f)
+                if (atk_delay < atK_delay_time)
                 {
-                    N_Mob_ani.isAttack_F = true;
+                    N_Mob_ani.isAttack_F = false;
                     N_Mob_ani.isAttack_C = false;
+                    atk_delay += Time.deltaTime;
                 }
+
+
             }
         }
 
         if (N_Mob_ani.isFly)
         {
+            N_Mob_ani.isAttack_C = false;
+            N_Mob_ani.isAttack_F = false;
             if (other.tag == "Player")
             {
-                N_Mob_ani.Fly_Attack = true;
-                N_Mob_ani.isAttack_C = false;
-                N_Mob_ani.isAttack_F = false;
+                if (atk_delay >= atK_delay_time)
+                {
+                    N_Mob_ani.Fly_Attack = true;
+                    if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.fireball_sky") &&
+                        animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+                    {
+                        atk_delay = 0;
+                    }
+                }
+
+                if (atk_delay < atK_delay_time)
+                {
+                    atk_delay += Time.deltaTime;
+                }
+
             }
         }
     }

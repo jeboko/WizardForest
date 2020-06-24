@@ -88,38 +88,6 @@ public class Boar_Animation : MonoBehaviour
         }
     }
 
-    /*
-    // 오브젝트와 몬스터의 콜라이더가 충돌시 처리함수
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isAttack = true;
-        }
-
-        if (other.tag == "Damage")
-        {
-            isDamage = true;
-        }
-    }
-
-    // 콜라이더 충돌이 없는경우
-    // 플레이어가 공격범위 밖에 있는경우 >> isAttack값을 false로 바꾸고 공격을 멈추게 한다.
-    // 데미지 오브젝트 와 충돌이 끝나면 데미지 애니메이션 종료
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            isAttack = false;
-        }
-
-        if (other.tag == "Damage")
-        {
-            isDamage = false;
-        }
-    }
-    */
-
     private void my_Atk()
     {
         // 원거리공격 판정?

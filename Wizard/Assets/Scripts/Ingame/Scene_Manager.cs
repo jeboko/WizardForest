@@ -5,24 +5,29 @@ using UnityEngine.UI;
 
 public class Scene_Manager : MonoBehaviour
 {
+    Player_UI_Controller player_hp_controller;
     public GameObject day_image;
     public GameObject night_image;
     public GameObject dayLight;
     public GameObject nightLight;
-    bool day_night;
+    public bool day_night;
     public Text Days;
-    public static int day_count;
+    public int day_count;
 
     public float day_time;
     public float night_time;
-    float time;
+    [HideInInspector] public float time;
+   
     
     public static bool isdeath;
     float death_time;
     public GameObject Death_Option;
 
+    public GameObject spwaner;
+
     void Start()
     {
+        player_hp_controller = GameObject.Find("Player_UI").GetComponent<Player_UI_Controller>();
         day_night = true;
         day_count = 1;
         isdeath = false;
@@ -45,6 +50,8 @@ public class Scene_Manager : MonoBehaviour
                 day_night = false;
                 time = 0;
             }
+            spwaner.SetActive(false);
+            player_hp_controller.HP_amount = player_hp_controller.fullHP;
         }
         else
         {
@@ -62,6 +69,7 @@ public class Scene_Manager : MonoBehaviour
                 day_count++;
                 Days.text = "D - " + day_count.ToString();
             }
+            spwaner.SetActive(true);
         }
 
         if (isdeath)

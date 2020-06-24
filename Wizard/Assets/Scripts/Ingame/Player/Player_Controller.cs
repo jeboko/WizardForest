@@ -57,6 +57,7 @@ public class Player_Controller : MonoBehaviour
 
         originspeed = move_speed;
         lookrotation = new Vector3(-10000, 0, 0); // 이후 삭제
+        knockback_way = new Vector3(0, 0, 0);
     }
 
     void FixedUpdate()
@@ -151,9 +152,11 @@ public class Player_Controller : MonoBehaviour
 
     void KnockBack(GameObject enemy)
     {
-        knockback_way = (enemy.transform.position - transform.position);
+        knockback_way = (enemy.transform.position - gameObject.transform.position);
+        knockback_way = knockback_way.normalized;
         RB.velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * knockback_power * -1f;
         canwalk = false;
+        knockback_way = new Vector3(0, 0, 0);
     }
 
     public void Death()

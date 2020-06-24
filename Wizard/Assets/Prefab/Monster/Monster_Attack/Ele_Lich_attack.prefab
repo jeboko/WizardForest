@@ -19032,7 +19032,7 @@ GameObject:
   - component: {fileID: 2349663252917127504}
   - component: {fileID: 7409863788499055557}
   m_Layer: 0
-  m_Name: Ele_LIch_attack
+  m_Name: Ele_Lich_attack
   m_TagString: Mob_Atk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19066,6 +19066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  Hit_Effect: {fileID: 1631613713751242306, guid: 36bf0ca7aacf6f94385d15c89334644e,
+    type: 3}
   damage: 3
   num: 4
 --- !u!135 &7409863788499055557

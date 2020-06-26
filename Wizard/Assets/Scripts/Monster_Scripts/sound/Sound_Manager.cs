@@ -11,11 +11,13 @@ public class Sound_Manager : MonoBehaviour
     bool isPlay;
     bool isDie;
     Animator animator;
+    Mob_controller controller;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        controller = GetComponent<Mob_controller>();
         isPlay = true;
         isDie = true;
     }
@@ -23,8 +25,7 @@ public class Sound_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("attack") &&
-                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
         {
             audioSource.PlayOneShot(Atk_Sound); //오디오 재생
             isPlay = false;
@@ -35,7 +36,7 @@ public class Sound_Manager : MonoBehaviour
             isPlay = true;
         }
 
-        if (isDie && animator.GetCurrentAnimatorStateInfo(0).IsName("dead"))
+        if (isDie && controller.Hp <= 0)
         {
             audioSource.PlayOneShot(Die_Sound);
             isDie = false;

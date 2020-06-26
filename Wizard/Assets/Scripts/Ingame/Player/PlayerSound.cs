@@ -10,26 +10,35 @@ public class PlayerSound : MonoBehaviour
 
     AudioSource AD;
 
-
+    bool isrun;
     void Start()
     {
         AD = GetComponent<AudioSource>();
+        isrun = true;
     }
 
     void FixedUpdate()
     {
-        if (Player_Controller.isruning)
+        if (isrun && Player_Controller.isruning)
         {
             AD.clip = run;
             AD.loop = true;
             AD.Play();
+            isrun = false;
         }
-        else if (Player_Controller.isdeath)
+
+        if(Player_Controller.isruning == false)
+        {
+            isrun = true;
+        }
+
+        if (Player_Controller.isdeath)
         {
             AD.clip = death;
             AD.loop = false;
             AD.Play();
         }
+
         else
         {
             AD.loop = false;

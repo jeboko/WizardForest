@@ -8,6 +8,7 @@ public class Bullet_Controller : MonoBehaviour
     public GameObject hit;
     public GameObject OBJ;
     public GameObject light;
+    bool isplayed;
 
     public float speed;
     public float damage;
@@ -29,10 +30,12 @@ public class Bullet_Controller : MonoBehaviour
 
     private void Start()
     {
+        isplayed = false;
         AD = GetComponent<AudioSource>();
-        if (NO_HIT)
+        if (NO_HIT && isplayed == false)
         {
             AD.Play();
+            isplayed = true;
         }
     }
 
@@ -135,7 +138,12 @@ public class Bullet_Controller : MonoBehaviour
         {
             GetComponent<SphereCollider>().enabled = false;
         }
-        
-        AD.Play();
+
+        if(isplayed == false)
+        {
+            isplayed = true;
+            AD.Play();
+        }
+  
     }
 }

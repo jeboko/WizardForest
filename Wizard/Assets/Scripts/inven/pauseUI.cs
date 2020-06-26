@@ -9,6 +9,7 @@ public class pauseUI : MonoBehaviour
     private bool buildOn = false;
     private bool invenOn = false;
 
+    public bool farming_state = false;
 
     private GameObject buildPanel;
     private GameObject invenpanel;
@@ -52,6 +53,25 @@ public class pauseUI : MonoBehaviour
         }
 
         invenOn = !invenOn;
+    }
+
+    public void farming()
+    {
+        farming_state = true;
+    }
+
+    private void Update()
+    {
+        if (farming_state == true)
+        {
+            StartCoroutine(WaitForIt());
+        }
+    }
+
+    IEnumerator WaitForIt()
+    {
+        yield return new WaitForSeconds(1.0f);
+        farming_state = false;
     }
 
 }

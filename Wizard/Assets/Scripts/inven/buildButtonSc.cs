@@ -16,7 +16,7 @@ public class buildButtonSc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("Player").GetComponent<Player>().rock_count == 0 || GameObject.Find("Player").GetComponent<Player>().wood_count == 0)
+        if (GameObject.Find("Player").GetComponent<Player>().rock_count <= 0 || GameObject.Find("Player").GetComponent<Player>().wood_count <= 0)
         {
             GameObject.Find("baricate_B").GetComponent<Button>().interactable = false;
         }
@@ -24,6 +24,25 @@ public class buildButtonSc : MonoBehaviour
         {
             GameObject.Find("baricate_B").GetComponent<Button>().interactable = true;
         }
+
+
+        if (GameObject.Find("Player").GetComponent<Player>().rock_count <= 0 || GameObject.Find("Player").GetComponent<Player>().wood_count <= 0)
+        {
+            GameObject.Find("baricate_B2").GetComponent<Button>().interactable = false;
+        }
+        else if (GameObject.Find("Player").GetComponent<Player>().rock_count >= 2 && GameObject.Find("Player").GetComponent<Player>().wood_count >= 2)
+        {
+            GameObject.Find("baricate_B2").GetComponent<Button>().interactable = true;
+        }
+
+       if (GameObject.Find("Player").GetComponent<Player>().rock_count <= 0 || GameObject.Find("Player").GetComponent<Player>().wood_count <= 0)
+       {
+                GameObject.Find("baricate_B3").GetComponent<Button>().interactable = false;
+       }
+       else if (GameObject.Find("Player").GetComponent<Player>().rock_count >= 3 && GameObject.Find("Player").GetComponent<Player>().wood_count >= 3)
+       {
+                GameObject.Find("baricate_B3").GetComponent<Button>().interactable = true;
+       }
 
         if (GameObject.Find("Player").GetComponent<Player>().red_count == 0)
         {
@@ -57,6 +76,17 @@ public class buildButtonSc : MonoBehaviour
     {    
             GameObject.Find("Player").GetComponent<Player>().Create_B();
     } // 설치 UI의 바리케이트 버튼 함수
+
+    public void createBaricate2()
+    {
+        GameObject.Find("Player").GetComponent<Player>().Create_B2();
+    } // 설치 UI의 바리케이트 버튼 함수
+
+    public void createBaricate3()
+    {
+        GameObject.Find("Player").GetComponent<Player>().Create_B3();
+    } // 설치 UI의 바리케이트 버튼 함수
+
 
     public void createFireBarrel()
     {

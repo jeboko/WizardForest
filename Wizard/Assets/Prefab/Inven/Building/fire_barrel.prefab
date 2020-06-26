@@ -18524,6 +18524,8 @@ GameObject:
   - component: {fileID: 6623836512188072120}
   - component: {fileID: 1694967025727622342}
   - component: {fileID: 1694967025727622343}
+  - component: {fileID: 82418403708240043}
+  - component: {fileID: 3771916480433018532}
   m_Layer: 0
   m_Name: fire_barrel
   m_TagString: fire_barrel
@@ -18636,4 +18638,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Build_state: 0
   state: 0
-  HP: 100
+--- !u!114 &82418403708240043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694967025727622969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3326833c904608b4d81a09c3bd07d766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 1694967025727622969}
+  end_effect: {fileID: 1981909135408210, guid: 050473658998b824fa24f0f192f78c73, type: 3}
+--- !u!114 &3771916480433018532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694967025727622969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8ba1b6ad5bad343b4458adef7e7e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 1
+  hpBarPrefab: {fileID: 5112782707441879583, guid: 319d61e0b21116449ab2a0e847ba6e84,
+    type: 3}
+  hpBarOffset: {x: 0, y: 2, z: 0}

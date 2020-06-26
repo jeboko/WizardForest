@@ -10,6 +10,17 @@ TagManager:
   - Mob_Atk
   - Range
   - Limit
+  - slow_trap
+  - baricate
+  - poison_trap
+  - fire_barrel
+  - wood
+  - B_flower
+  - rock
+  - R_flower
+  - Y_flower
+  - baricate2
+  - baricate3
   layers:
   - Default
   - TransparentFX

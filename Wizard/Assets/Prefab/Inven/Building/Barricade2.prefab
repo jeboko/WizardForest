@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 994200886245739332}
   - component: {fileID: 6264593486174564249}
   - component: {fileID: 2351861340707616703}
+  - component: {fileID: 1974868918355862792}
+  - component: {fileID: -3926700288824823834}
   m_Layer: 0
   m_Name: Barricade2
-  m_TagString: baricate
+  m_TagString: baricate2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +59,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Build_state: 2
   state: 0
-  HP: 100
 --- !u!54 &6264593486174564249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87,6 +88,61 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.293251, y: 1.1816473, z: 1.32}
   m_Center: {x: 0.051926315, y: 0.07815412, z: 0.020460844}
+--- !u!23 &1974868918355862792
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989965378241290188}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &-3926700288824823834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989965378241290188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b8ba1b6ad5bad343b4458adef7e7e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 100
+  hpBarPrefab: {fileID: 5112782707441879583, guid: 319d61e0b21116449ab2a0e847ba6e84,
+    type: 3}
+  hpBarOffset: {x: 0, y: 2, z: 0}
 --- !u!1001 &80287175629159743
 PrefabInstance:
   m_ObjectHideFlags: 0

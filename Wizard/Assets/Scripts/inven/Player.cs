@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public Text countBlue;
 
     public GameObject baricate;
+    public GameObject baricate2;
+    public GameObject baricate3;
     public GameObject fire_b;
     public GameObject poison_T;
     public GameObject slow_T;
@@ -40,37 +42,46 @@ public class Player : MonoBehaviour
     //플레이어가 이미 건설 준비중이면 새로운 오브젝트를 손에 들지 못하게 하기 위한 불 변수
 
   
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
 	{
-		
-			if (col.gameObject.tag == "rock")
-			{
-            Debug.Log("돌과 충돌");
-				Destroy(col.gameObject);
-				rock_count++;
-			}
-			else if (col.gameObject.tag == "wood")
-			{
-				Destroy(col.gameObject);
-				wood_count++;
-			}
+
+        if (GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state == true)
+        {
+
+            if (col.gameObject.tag == "rock")
+            {
+                Destroy(col.gameObject);
+                rock_count++;
+                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+            }
+            else if (col.gameObject.tag == "wood")
+            {
+                Destroy(col.gameObject);
+                wood_count++;
+                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+            }
             else if (col.gameObject.tag == "B_flower")
             {
                 Destroy(col.gameObject);
                 blue_count++;
+                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
             }
             else if (col.gameObject.tag == "Y_flower")
             {
                 Destroy(col.gameObject);
                 yellow_count++;
+                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
             }
             else if (col.gameObject.tag == "R_flower")
             {
                 Destroy(col.gameObject);
                 red_count++;
+                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
             }
-       
-           
+
+        }
+
+
     }	
 
 
@@ -105,6 +116,28 @@ public class Player : MonoBehaviour
                     tempo2.GetComponent<BuildObj>().state = true;
                     building_state = false;
            
+            }
+
+            else if (tempo.tag == "baricate2")
+            {
+                tempo2 = Instantiate(baricate2, build_checker.transform.position, gameObject.transform.rotation);
+                Destroy(tempo);
+                rock_count -= 2;
+                wood_count -= 2;
+                tempo2.GetComponent<BuildObj>().state = true;
+                building_state = false;
+
+            }
+
+            else if (tempo.tag == "baricate3")
+            {
+                tempo2 = Instantiate(baricate3, build_checker.transform.position, gameObject.transform.rotation);
+                Destroy(tempo);
+                rock_count -= 3;
+                wood_count -= 3;
+                tempo2.GetComponent<BuildObj>().state = true;
+                building_state = false;
+
             }
 
             else if(tempo.tag == "fire_barrel")
@@ -151,11 +184,32 @@ public class Player : MonoBehaviour
         {
             building_state = true;
             Instantiate(baricate, build_checker.transform.position, gameObject.transform.rotation).transform.parent = build_checker.transform;
-            tempo = transform.Find("build_checker").transform.Find("sample_build(Clone)").gameObject;
+            tempo = transform.Find("build_checker").transform.Find("Barricade1(Clone)").gameObject;
 
         }
     }
 
+    public void Create_B2()// 건설 준비 버튼(바리케이드)2. 2번쨰 크기
+    {
+        if (building_state == false) // 설치 준비
+        {
+            building_state = true;
+            Instantiate(baricate2, build_checker.transform.position, gameObject.transform.rotation).transform.parent = build_checker.transform;
+            tempo = transform.Find("build_checker").transform.Find("Barricade2(Clone)").gameObject;
+
+        }
+    }
+
+    public void Create_B3()// 건설 준비 버튼(바리케이드)3. 3번쨰 크기
+    {
+        if (building_state == false) // 설치 준비
+        {
+            building_state = true;
+            Instantiate(baricate3, build_checker.transform.position, gameObject.transform.rotation).transform.parent = build_checker.transform;
+            tempo = transform.Find("build_checker").transform.Find("Barricade3(Clone)").gameObject;
+
+        }
+    }
 
     public void create_F()// 건설 준비 버튼(불꽃 통)
     {

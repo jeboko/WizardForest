@@ -25,6 +25,17 @@ public class Bullet_Controller : MonoBehaviour
     public bool NO_HIT;
     float time;
 
+    AudioSource AD;
+
+    private void Start()
+    {
+        AD = GetComponent<AudioSource>();
+        if (NO_HIT)
+        {
+            AD.Play();
+        }
+    }
+
     void FixedUpdate()
     {
         if (isskill && ishit == false)
@@ -124,5 +135,7 @@ public class Bullet_Controller : MonoBehaviour
         {
             GetComponent<SphereCollider>().enabled = false;
         }
+        
+        AD.Play();
     }
 }

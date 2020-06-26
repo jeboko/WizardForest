@@ -27,6 +27,12 @@ public class Scene_Manager : MonoBehaviour
     public GameObject spwaner;
     public GameObject boss_spawner;
 
+    public GameObject UI1;
+    public GameObject UI2;
+    public GameObject UI3;
+    public GameObject UI4;
+    public GameObject UI5;
+
     void Start()
     {
         player_hp_controller = GameObject.Find("Player_UI").GetComponent<Player_UI_Controller>();
@@ -52,6 +58,11 @@ public class Scene_Manager : MonoBehaviour
                 nightLight.SetActive(true);
                 day_night = false;
                 time = 0;
+                UI1.SetActive(false);
+                UI2.SetActive(false);
+                UI3.SetActive(false);
+                UI4.SetActive(false);
+                UI5.SetActive(false);
             }
             is_day = true;
             spwaner.SetActive(false);
@@ -73,6 +84,9 @@ public class Scene_Manager : MonoBehaviour
                 time = 0;
                 day_count++;
                 Days.text = "D - " + day_count.ToString();
+                UI1.SetActive(true);
+                UI2.SetActive(true);
+                UI3.SetActive(true);
             }
             is_day = false;
             spwaner.SetActive(true);

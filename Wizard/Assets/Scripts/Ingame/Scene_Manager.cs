@@ -25,7 +25,6 @@ public class Scene_Manager : MonoBehaviour
     public GameObject Death_Option;
 
     public GameObject spwaner;
-    public GameObject boss_spawner;
 
     void Start()
     {
@@ -55,7 +54,6 @@ public class Scene_Manager : MonoBehaviour
             }
             is_day = true;
             spwaner.SetActive(false);
-            boss_spawner.SetActive(false);
             player_hp_controller.HP_amount = player_hp_controller.fullHP;
         }
         else
@@ -76,7 +74,6 @@ public class Scene_Manager : MonoBehaviour
             }
             is_day = false;
             spwaner.SetActive(true);
-            boss_spawner.SetActive(true);
         }
 
         if (isdeath)

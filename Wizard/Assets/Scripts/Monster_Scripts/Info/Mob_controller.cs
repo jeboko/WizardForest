@@ -16,7 +16,6 @@ public class Mob_controller : MonoBehaviour
     public float Hp;
     public float Atk;
     public float Speed;
-    [HideInInspector] public float in_speed;
 
     public GameObject hpBarPrefab;
     public Vector3 hpBarOffset = new Vector3(0.0f, 2.0f, 0);
@@ -36,7 +35,6 @@ public class Mob_controller : MonoBehaviour
         initHp = manager.deck[Mob_num - 1].Hp; ;
         Atk = manager.deck[Mob_num-1].Atk;
         Speed = manager.deck[Mob_num - 1].speed;
-        in_speed = manager.deck[Mob_num - 1].speed;
 
         SetHpBar();
     }
@@ -68,21 +66,5 @@ public class Mob_controller : MonoBehaviour
         var _hpbar = hpBar.GetComponent<Monster_HP_Bar>();
         _hpbar.targetTr = this.gameObject.transform;
         _hpbar.offset = hpBarOffset;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Hill")
-        {
-            gameObject.GetComponent<BoxCollider>().isTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Hill")
-        {
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
-        }
     }
 }

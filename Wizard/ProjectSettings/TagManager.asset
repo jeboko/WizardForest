@@ -21,6 +21,7 @@ TagManager:
   - Y_flower
   - baricate2
   - baricate3
+  - Hill
   layers:
   - Default
   - TransparentFX

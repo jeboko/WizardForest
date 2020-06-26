@@ -197,6 +197,7 @@ public class Boss_Monster_Animation : MonoBehaviour
         if((HP / tempHP) <= 0.7)
         {
             animator.SetBool("takeoff", true);
+            gameObject.GetComponent<BoxCollider>().isTrigger = true;
         }
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.takeoff") &&

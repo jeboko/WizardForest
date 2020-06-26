@@ -45,7 +45,7 @@ public class Mob_controller : MonoBehaviour
         navimash_controller.mob_speed = Speed;
         hpBarImage.fillAmount = Hp / initHp;
 
-        if (scene_Manager.day_night)
+        if (scene_Manager.is_day)
         {
             Hp = 0;
         }

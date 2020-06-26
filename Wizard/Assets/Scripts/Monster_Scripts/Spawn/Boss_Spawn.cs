@@ -23,7 +23,7 @@ public class Boss_Spawn : MonoBehaviour
         if(timer.day_count % 3 == 0)
         {
             boss_time = timer.night_time / 2;
-            if (!timer.day_night)
+            if (!timer.is_day)
             {
                 if (timer.time >= boss_time && boss_num == 0)
                 {
@@ -33,7 +33,7 @@ public class Boss_Spawn : MonoBehaviour
             }
 
         }
-        if (timer.day_night)
+        if (timer.is_day)
         {
             boss_num = 0;
         }

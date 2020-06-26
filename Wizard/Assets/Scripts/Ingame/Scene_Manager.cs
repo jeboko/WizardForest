@@ -10,7 +10,8 @@ public class Scene_Manager : MonoBehaviour
     public GameObject night_image;
     public GameObject dayLight;
     public GameObject nightLight;
-    public bool day_night;
+    public static bool day_night;
+    public bool is_day;
     public Text Days;
     public int day_count;
 
@@ -32,6 +33,7 @@ public class Scene_Manager : MonoBehaviour
         day_count = 1;
         isdeath = false;
         death_time = 0;
+        is_day = true;
     }
 
     void FixedUpdate()
@@ -50,6 +52,7 @@ public class Scene_Manager : MonoBehaviour
                 day_night = false;
                 time = 0;
             }
+            is_day = true;
             spwaner.SetActive(false);
             player_hp_controller.HP_amount = player_hp_controller.fullHP;
         }
@@ -69,6 +72,7 @@ public class Scene_Manager : MonoBehaviour
                 day_count++;
                 Days.text = "D - " + day_count.ToString();
             }
+            is_day = false;
             spwaner.SetActive(true);
         }
 

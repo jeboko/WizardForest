@@ -49,7 +49,8 @@ public class JoyStick_Look : MonoBehaviour
 
     public void Drag(BaseEventData _Data)
     {
-        shot = true;
+        if(Scene_Manager.day_night == false)
+            shot = true;
         PointerEventData Data = _Data as PointerEventData;
         Vector3 Pos = Data.position;
 
@@ -64,7 +65,7 @@ public class JoyStick_Look : MonoBehaviour
         else
         {
             Stick.position = StickFirstPos + JoyVec * Radius;
-            if (Player_Controller.isruning == false && skill_enable)
+            if (Player_Controller.isruning == false && skill_enable && Scene_Manager.day_night == false)
             {
                 Attacker.GetComponent<Attack_Controller>().Skill();
                 skill_enable = false;

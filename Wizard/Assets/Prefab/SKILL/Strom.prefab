@@ -54,7 +54,7 @@ MonoBehaviour:
   speed: 1.5
   damage: 0
   start_time: 0
-  destroy_time: 5
+  destroy_time: 3.5
   hit_time: 0
   light_dec: 0
   boom_radius: 0
@@ -63,7 +63,6 @@ MonoBehaviour:
   boom_dec: 0
   islight: 0
   NO_HIT: 1
-  Boom_sound: {fileID: 0}
 --- !u!135 &2846221824565800892
 SphereCollider:
   m_ObjectHideFlags: 0

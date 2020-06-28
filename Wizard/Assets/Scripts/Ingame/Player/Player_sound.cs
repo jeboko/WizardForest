@@ -33,6 +33,7 @@ public class Player_sound : MonoBehaviour
             Debug.Log("re");
             audioSource.clip = Run_Sound;
             audioSource.Play();
+            audioSource.loop = true;
             //audioSource.PlayOneShot(Run_Sound); //오디오 재생
             isRun = false;
         }

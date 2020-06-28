@@ -31,6 +31,14 @@ public class Fire_ball : MonoBehaviour
     {
         time += Time.deltaTime;
         gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(gameObject.transform.position.y <= 0.5)
+        {
+            gameObject.transform.Translate(0, 0.1f, 0);
+        }
+        if (gameObject.transform.position.y > 0.6)
+        {
+            gameObject.transform.Translate(0, -0.1f, 0);
+        }
         if (time > 3f)
         {
             Destroy(gameObject);

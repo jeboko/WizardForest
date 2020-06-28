@@ -35,31 +35,27 @@ public class Boss_Sound : MonoBehaviour
     void m_sound()
     {
         //근거리
-        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("attack") &&
-                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
         {
             audioSource.PlayOneShot(Atk_Sound1); //오디오 재생
             isPlay = false;
         }
 
         //원거리
-        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("fireball_ground") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("fireball_ground"))
         {
             audioSource.PlayOneShot(Atk_Sound2); //오디오 재생
             isPlay = false;
         }
 
-        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("fireball_sky") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("fireball_sky"))
         {
             audioSource.PlayOneShot(Atk_Sound2); //오디오 재생
             isPlay = false;
         }
 
         // 날아오를떄
-        if (isTake_off && animator.GetCurrentAnimatorStateInfo(0).IsName("takeoff") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isTake_off && animator.GetCurrentAnimatorStateInfo(0).IsName("takeoff"))
         {
             audioSource.PlayOneShot(Take_off_Sound); //오디오 재생
             isTake_off = false;
@@ -67,10 +63,9 @@ public class Boss_Sound : MonoBehaviour
         }
 
         //나는 중
-        if (isFly && animator.GetCurrentAnimatorStateInfo(0).IsName("fly_forward") &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f)
+        if (isFly && animator.GetCurrentAnimatorStateInfo(0).IsName("fly_forward"))
         {
-            audioSource.PlayOneShot(Fly_Sound); //오디오 재생
+            audioSource.PlayOneShot(Fly_Sound, 0.3f); //오디오 재생
             isFly = false;
         }
 

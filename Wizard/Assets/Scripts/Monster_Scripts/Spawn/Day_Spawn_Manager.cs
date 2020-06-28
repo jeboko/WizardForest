@@ -63,11 +63,11 @@ public class Day_Spawn_Manager : MonoBehaviour
 
         if (scene_manager.day_count > 9)
         {
-            spawn_manager.deck[0].weight *= 0.2f;
-            spawn_manager.deck[1].weight *= 1.1f;
-            spawn_manager.deck[2].weight *= 0.5f;
-            spawn_manager.deck[3].weight *= 1.1f;
-            spawn_manager.deck[4].weight *= 1.2f;
+            spawn_manager.deck[0].weight = 0f;
+            spawn_manager.deck[1].weight = 10;
+            spawn_manager.deck[2].weight = 0f;
+            spawn_manager.deck[3].weight = 12f;
+            spawn_manager.deck[4].weight = 8f;
         }
     }
 }

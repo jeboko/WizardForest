@@ -14469,8 +14469,8 @@ MonoBehaviour:
   speed: 5
   damage: 100
   start_time: 0
-  destroy_time: 5
-  hit_time: 5
+  destroy_time: 3.8
+  hit_time: 3.8
   light_dec: 0.1
   boom_radius: 4
   isskill: 1
@@ -14478,7 +14478,6 @@ MonoBehaviour:
   boom_dec: 1
   islight: 1
   NO_HIT: 0
-  Boom_sound: {fileID: 0}
 --- !u!82 &-9138566940060731702
 AudioSource:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Bite_Box : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player_hp = GameObject.Find("Player_UI ").GetComponent<Player_UI_Controller>();
+        player_hp = GameObject.Find("Player_UI").GetComponent<Player_UI_Controller>();
         controller = GameObject.Find("Monster_Manager").GetComponent<Mob_Manager_Scripts>();
         damage = controller.deck[num - 1].Atk;
     }

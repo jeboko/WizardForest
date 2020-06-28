@@ -4810,8 +4810,8 @@ MonoBehaviour:
   speed: 2
   damage: 0
   start_time: 0
-  destroy_time: 10
-  hit_time: 10
+  destroy_time: 6
+  hit_time: 6
   light_dec: 0
   boom_radius: 3
   isskill: 1

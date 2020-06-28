@@ -3808,8 +3808,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4524016371763800934, guid: fbfe50baa92ebcc488f0be39b4da1ef0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbfe50baa92ebcc488f0be39b4da1ef0, type: 3}
 --- !u!1001 &250370344
 PrefabInstance:
@@ -4438,25 +4437,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 302036347}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &307679972 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7579929223762227087, guid: 8b9636d8a0239c54687dea31962a56a1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1548492946}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &307679973
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307679972}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1124237, y: 0.94212234, z: 1.0210662}
-  m_Center: {x: 0.052737027, y: 0.47007853, z: -0.03302513}
 --- !u!1001 &312821078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6885,8 +6865,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1445417520551801810, guid: cde467dcad787ca49b3fd01883f88930, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde467dcad787ca49b3fd01883f88930, type: 3}
 --- !u!1001 &454469080
 PrefabInstance:
@@ -16067,8 +16046,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red_Flower
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8135200364951311424, guid: a6958644780879f48bc9abb938b15727, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6958644780879f48bc9abb938b15727, type: 3}
 --- !u!1001 &1042296363
 PrefabInstance:
@@ -23205,25 +23183,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1452503472}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1456176270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 592956140254269148, guid: cde467dcad787ca49b3fd01883f88930,
-    type: 3}
-  m_PrefabInstance: {fileID: 452554889}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1456176271
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456176270}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.66094667, y: 0.7797044, z: 0.64100426}
-  m_Center: {x: -0.0921133, y: 0.38732556, z: 0.018641395}
 --- !u!1001 &1475571058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24196,25 +24155,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1519246457}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1525789340 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4524016371763800937, guid: fbfe50baa92ebcc488f0be39b4da1ef0,
-    type: 3}
-  m_PrefabInstance: {fileID: 245062950}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1525789341
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525789340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.4738646, y: 4.576647, z: 2.1519413}
-  m_Center: {x: -0.15216422, y: 2.2883234, z: -0.26007843}
 --- !u!1001 &1530571902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24469,7 +24409,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.0027e-41, z: 0, w: -2.765625}
+  m_BoundingSphereOverride: {x: 0, y: 1.4658e-41, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -24545,8 +24485,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yellow_Flower
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -7829092297459288511, guid: 8b9636d8a0239c54687dea31962a56a1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9636d8a0239c54687dea31962a56a1, type: 3}
 --- !u!1001 &1555467534
 PrefabInstance:
@@ -27147,25 +27086,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1694037892}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1696960836 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7693798265263943380, guid: a6958644780879f48bc9abb938b15727,
-    type: 3}
-  m_PrefabInstance: {fileID: 1033406598}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1696960837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696960836}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.2106802, y: 1.0435932, z: 1.1155157}
-  m_Center: {x: 0.072722614, y: 0.52170324, z: 0.0066260397}
 --- !u!1001 &1699939830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33572,11 +33492,12 @@ MonoBehaviour:
   is_day: 0
   Days: {fileID: 1786028438}
   day_count: 0
-  day_time: 1
-  night_time: 999
+  day_time: 10
+  night_time: 30
   time: 0
   Death_Option: {fileID: 95684019}
   spwaner: {fileID: 1921166932}
+  spwaner2: {fileID: 0}
   boss_spawner: {fileID: 1109333303}
   UI1: {fileID: 1082271045818748868}
   UI2: {fileID: 5377383946913419940}

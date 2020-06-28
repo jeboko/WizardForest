@@ -52,16 +52,16 @@ public class Obj_Ability : MonoBehaviour
 
             if (gameObject.tag == "baricate")
             {
-                other.transform.Translate(Vector3.forward * -2.0f);
+                other.transform.Translate(Vector3.forward * -0.5f);
             }
             if (gameObject.tag == "baricate2")
             {
-                other.transform.Translate(Vector3.forward * -2.0f);
+                other.transform.Translate(Vector3.forward * -0.5f);
             }
 
             if (gameObject.tag == "baricate3")
             {
-                other.transform.Translate(Vector3.forward * -2.0f);
+                other.transform.Translate(Vector3.forward * -0.5f);
             }
 
             if (gameObject.tag == "poison_trap")

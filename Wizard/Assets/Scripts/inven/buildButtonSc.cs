@@ -75,32 +75,38 @@ public class buildButtonSc : MonoBehaviour
     public void createBaricate()
     {
         GameObject.Find("Player").GetComponent<Player>().Create_B();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 바리케이트 버튼 함수
 
     public void createBaricate2()
     {
         GameObject.Find("Player").GetComponent<Player>().Create_B2();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 바리케이트 버튼 함수
 
     public void createBaricate3()
     {
         GameObject.Find("Player").GetComponent<Player>().Create_B3();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 바리케이트 버튼 함수
 
 
     public void createFireBarrel()
     {
         GameObject.Find("Player").GetComponent<Player>().create_F();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 불꽃통 버튼 함수
 
     public void createPoison_Trap()
     {
         GameObject.Find("Player").GetComponent<Player>().create_P();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 독 함정 버튼 함수
 
     public void createSlowTrap()
     {
         GameObject.Find("Player").GetComponent<Player>().create_S();
+        GameObject.Find("buildScreen").SetActive(false);
     } // 설치 UI의 이감 함정 버튼 함수
 
 

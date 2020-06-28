@@ -25,7 +25,6 @@ public class Scene_Manager : MonoBehaviour
     public GameObject Death_Option;
 
     public GameObject spwaner;
-    public GameObject spwaner2;
     public GameObject boss_spawner;
 
     public GameObject UI1;
@@ -42,6 +41,8 @@ public class Scene_Manager : MonoBehaviour
         isdeath = false;
         death_time = 0;
         is_day = true;
+        dayLight.GetComponent<Light>().intensity = 0f;
+        nightLight.GetComponent<Light>().intensity = 1.1f;
     }
 
     void FixedUpdate()
@@ -50,13 +51,16 @@ public class Scene_Manager : MonoBehaviour
         {
             time += Time.deltaTime;
             day_image.GetComponent<Image>().fillAmount = 1f - (time / day_time);
+            if(time <= 2)
+            {
+                dayLight.GetComponent<Light>().intensity += 0.011f;
+                nightLight.GetComponent<Light>().intensity -= 0.011f;
+            }
 
             if (time >= day_time)
             {
                 day_image.SetActive(false);
-                dayLight.SetActive(false);
                 night_image.SetActive(true);
-                nightLight.SetActive(true);
                 day_night = false;
                 time = 0;
                 UI1.SetActive(false);
@@ -67,7 +71,6 @@ public class Scene_Manager : MonoBehaviour
             }
             is_day = true;
             spwaner.SetActive(false);
-            spwaner2.SetActive(false);
             boss_spawner.SetActive(false);
             player_hp_controller.HP_amount = player_hp_controller.fullHP;
         }
@@ -75,13 +78,16 @@ public class Scene_Manager : MonoBehaviour
         {
             time += Time.deltaTime;
             night_image.GetComponent<Image>().fillAmount = 1f - (time / night_time);
+            if (time <= 2)
+            {
+                dayLight.GetComponent<Light>().intensity -= 0.011f;
+                nightLight.GetComponent<Light>().intensity += 0.011f;
+            }
 
             if (time >= night_time)
             {
                 day_image.SetActive(true);
-                dayLight.SetActive(true);
                 night_image.SetActive(false);
-                nightLight.SetActive(false);
                 day_night = true;
                 time = 0;
                 day_count++;
@@ -92,7 +98,6 @@ public class Scene_Manager : MonoBehaviour
             }
             is_day = false;
             spwaner.SetActive(true);
-            spwaner2.SetActive(true);
             boss_spawner.SetActive(true);
         }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1781313148058701780}
   - component: {fileID: 1858869836955024274}
   - component: {fileID: 7443391276860157046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4787,7 +4787,7 @@ GameObject:
   - component: {fileID: 773532506806881875}
   - component: {fileID: 5203929038999285262}
   - component: {fileID: 8041455761349553881}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9542,7 +9542,7 @@ GameObject:
   - component: {fileID: 4682698298921595343}
   - component: {fileID: 1118364437979254886}
   - component: {fileID: 7640346404144326876}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: shock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14319,7 +14319,7 @@ GameObject:
   - component: {fileID: 754715278602103382}
   - component: {fileID: 8136947496542991061}
   - component: {fileID: 1599144455455063973}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sparks-blend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19073,7 +19073,7 @@ GameObject:
   - component: {fileID: 4161709341739702016}
   - component: {fileID: 857179781359772467}
   - component: {fileID: 3185040438818060991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23859,7 +23859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3584224688346890503}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Swarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23892,7 +23892,7 @@ GameObject:
   - component: {fileID: 4193520095753054104}
   - component: {fileID: 3483614281917098498}
   - component: {fileID: 3077151956090078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rays-blend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28655,7 +28655,7 @@ GameObject:
   - component: {fileID: 5366563669784305054}
   - component: {fileID: 5366563669784305049}
   - component: {fileID: 9049141898830051207}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skill2_item
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -28694,6 +28694,7 @@ MonoBehaviour:
   obj: {fileID: 5301281425445243579}
   hit: {fileID: 4032126554387921938}
   ishit: 1
+  destroy_time: 0
 --- !u!135 &9049141898830051207
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28717,7 +28718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5081580077146484885}
   - component: {fileID: 8943472475648052624}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28810,7 +28811,7 @@ GameObject:
   - component: {fileID: 4884258034237912589}
   - component: {fileID: 2163625426935586268}
   - component: {fileID: 8067689924928176148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33574,7 +33575,7 @@ GameObject:
   - component: {fileID: 8258382780807822277}
   - component: {fileID: 8149969614363529845}
   - component: {fileID: 1913888711340747050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: plasma-rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38350,7 +38351,7 @@ GameObject:
   - component: {fileID: 4296324225407189717}
   - component: {fileID: 4192445367232076425}
   - component: {fileID: 4041769347515449908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: plasma-rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}

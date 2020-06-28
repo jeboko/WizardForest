@@ -41,7 +41,7 @@ public class Player_sound : MonoBehaviour
 
         if (isRun && animator.GetCurrentAnimatorStateInfo(0).IsName("run"))
         {
-            Debug.Log("re");
+
             audioSource.clip = Run_Sound;
             audioSource.Play();
             audioSource.loop = true;

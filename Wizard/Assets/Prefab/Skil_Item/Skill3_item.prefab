@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7199810506391396251}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6481225910267123406}
   - component: {fileID: 907009418775322528}
   - component: {fileID: 2354234913803538776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4818,7 +4818,7 @@ GameObject:
   - component: {fileID: 2945561286328362227}
   - component: {fileID: 2945561286328362226}
   - component: {fileID: 8299788705817601745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skill3_item
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -4857,6 +4857,7 @@ MonoBehaviour:
   obj: {fileID: 423099112641685521}
   hit: {fileID: 8912076114278490485}
   ishit: 1
+  destroy_time: 0
 --- !u!135 &8299788705817601745
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4880,7 +4881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854495378157774525}
   - component: {fileID: 7589938075171752484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +4974,7 @@ GameObject:
   - component: {fileID: 8896811008433124269}
   - component: {fileID: 3897601872295100912}
   - component: {fileID: 3164993297410700175}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9737,7 +9738,7 @@ GameObject:
   - component: {fileID: 4256432962457122719}
   - component: {fileID: 6569872003084613195}
   - component: {fileID: 5429635011504054043}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: flashes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14491,7 +14492,7 @@ GameObject:
   - component: {fileID: 6479278569014353474}
   - component: {fileID: 1851890969637175943}
   - component: {fileID: 6790472615490577885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

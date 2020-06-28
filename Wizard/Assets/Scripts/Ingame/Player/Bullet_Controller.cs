@@ -73,7 +73,8 @@ public class Bullet_Controller : MonoBehaviour
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "item" && other.gameObject.tag != "Range" 
             && other.gameObject.tag != "Bullet" && other.gameObject.tag != "Mob_Atk" && other.gameObject.tag != "Hill" &&
             other.gameObject.tag != "baricate" && other.gameObject.tag != "baricate2" && other.gameObject.tag != "baricate3"
-            && other.gameObject.tag != "poison_trap" && other.gameObject.tag != "slow_trap")
+            && other.gameObject.tag != "poison_trap" && other.gameObject.tag != "slow_trap" && other.gameObject.tag != "R_flower"
+            && other.gameObject.tag != "B_flower" && other.gameObject.tag != "Y_flower")
         {
             if (NO_HIT == false)
             {

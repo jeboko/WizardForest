@@ -47,7 +47,6 @@ public class Obj_Ability : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("제발 충돌해");
             Hp--;
 
             if (gameObject.tag == "baricate")

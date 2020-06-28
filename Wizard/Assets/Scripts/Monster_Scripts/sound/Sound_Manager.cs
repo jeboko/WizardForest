@@ -18,13 +18,11 @@ public class Sound_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         controller = GetComponent<Mob_controller>();
         isPlay = true;
         isDie = true;
-        
     }
 
     // Update is called once per frame
@@ -42,7 +40,7 @@ public class Sound_Manager : MonoBehaviour
         {
             isPlay = true;
         }
-
+        
         if (isDie && controller.Hp <= 0)
         {
             audioSource.PlayOneShot(Die_Sound);
@@ -53,8 +51,6 @@ public class Sound_Manager : MonoBehaviour
     public void SoundSlider()
     {
         audioSource.volume = GameObject.Find("Player").transform.Find("wizard_01").GetComponent<Player_sound>().audioSource.volume;
-
-        
     }
 }
 

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    Scene_Manager S_M;
     public int rock_count = 0;
     public int wood_count = 0;
 
@@ -41,47 +42,51 @@ public class Player : MonoBehaviour
     private bool building_state = false;
     //플레이어가 이미 건설 준비중이면 새로운 오브젝트를 손에 들지 못하게 하기 위한 불 변수
 
+    private void Start()
+    {
+        S_M = GameObject.Find("GameManager").GetComponent<Scene_Manager>();
+    }
 
     private void OnTriggerStay(Collider col)
     {
-
-        if (GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state == true)
+        if(S_M.is_day)
         {
+            if (GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state == true)
+            {
 
-            if (col.gameObject.tag == "rock")
-            {
-                Destroy(col.gameObject);
-                rock_count++;
-                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
-            }
-            else if (col.gameObject.tag == "wood")
-            {
-                Destroy(col.gameObject);
-                wood_count++;
-                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
-            }
-            else if (col.gameObject.tag == "B_flower")
-            {
-                Destroy(col.gameObject);
-                blue_count++;
-                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
-            }
-            else if (col.gameObject.tag == "Y_flower")
-            {
-                Destroy(col.gameObject);
-                yellow_count++;
-                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
-            }
-            else if (col.gameObject.tag == "R_flower")
-            {
-                Destroy(col.gameObject);
-                red_count++;
-                GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
-            }
+                if (col.gameObject.tag == "rock")
+                {
+                    Destroy(col.gameObject);
+                    rock_count++;
+                    GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+                }
+                else if (col.gameObject.tag == "wood")
+                {
+                    Destroy(col.gameObject);
+                    wood_count++;
+                    GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+                }
+                else if (col.gameObject.tag == "B_flower")
+                {
+                    Destroy(col.gameObject);
+                    blue_count++;
+                    GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+                }
+                else if (col.gameObject.tag == "Y_flower")
+                {
+                    Destroy(col.gameObject);
+                    yellow_count++;
+                    GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+                }
+                else if (col.gameObject.tag == "R_flower")
+                {
+                    Destroy(col.gameObject);
+                    red_count++;
+                    GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state = false;
+                }
 
+            }
         }
-
-
     }
 
 

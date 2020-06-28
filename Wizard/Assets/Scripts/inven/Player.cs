@@ -89,11 +89,11 @@ public class Player : MonoBehaviour
 	void Update()
 	{
 		// 재료 카운트 텍스트에 입력
-		countRock.text = " X " + rock_count;
-		countWood.text = " X " + wood_count;
-        countRed.text = " X " + red_count;
-        countYellow.text = " X " + yellow_count;
-        countBlue.text = " X " + blue_count;
+		countRock.text = "바위 X " + rock_count;
+		countWood.text = "목재 X " + wood_count;
+        countRed.text = "빨간 꽃 X " + red_count;
+        countYellow.text = "노란 꽃 X " + yellow_count;
+        countBlue.text = "파란 꽃 X " + blue_count;
 
 		
         if (building_state)
@@ -115,12 +115,7 @@ public class Player : MonoBehaviour
                     wood_count--;
                     tempo2.GetComponent<BuildObj>().state = true;
                     building_state = false;
-
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
-
+           
             }
 
             else if (tempo.tag == "baricate2")
@@ -131,11 +126,6 @@ public class Player : MonoBehaviour
                 wood_count -= 2;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
-
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
 
             }
 
@@ -148,11 +138,6 @@ public class Player : MonoBehaviour
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
 
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
-
             }
 
             else if(tempo.tag == "fire_barrel")
@@ -163,11 +148,6 @@ public class Player : MonoBehaviour
                 red_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
-
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
             }
 
             else if (tempo.tag == "slow_trap")
@@ -178,11 +158,6 @@ public class Player : MonoBehaviour
                 blue_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
-
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
             }
 
             else if (tempo.tag == "poison_trap")
@@ -193,11 +168,6 @@ public class Player : MonoBehaviour
                 yellow_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
-
-                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
-                {
-                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
-                }
             }
 
         }

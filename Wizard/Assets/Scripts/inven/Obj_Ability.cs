@@ -31,13 +31,15 @@ public class Obj_Ability : MonoBehaviour
     void Update()
     {
         hpBarImage.fillAmount = Hp / initHp;
+
         if (Hp <= 0)
         {
-            gameObject.GetComponent<Boom>().boom_eff();
             Destroy(this.gameObject);
+            gameObject.GetComponent<Boom>().boom_eff();
+            
         }
 
-        
+
     }
 
 
@@ -74,5 +76,5 @@ public class Obj_Ability : MonoBehaviour
 
     }
 
- 
+
 }

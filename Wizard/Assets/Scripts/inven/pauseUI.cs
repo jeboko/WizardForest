@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class pauseUI : MonoBehaviour
 {
-    private bool pauseOn = false;
-    private bool buildOn = false;
-    private bool invenOn = false;
+    public bool buildOn = false;
+    public bool invenOn = false;
 
     public bool farming_state = false;
 
-    private GameObject buildPanel;
-    private GameObject invenpanel;
+    public GameObject buildPanel;
+    public GameObject invenpanel;
 
     private void Awake()
     {
-    
+
 
         buildPanel = GameObject.Find("Canvas").transform.Find("buildScreen").gameObject;
 
@@ -25,34 +24,70 @@ public class pauseUI : MonoBehaviour
 
     public void activebuild()
     {
-        if (!buildOn)
+        if (GameObject.Find("item_List_Bt").GetComponent<pauseUI>().invenOn == true)
         {
-            
-            buildPanel.SetActive(true);
+            GameObject.Find("item_List_Bt").GetComponent<pauseUI>().activeinven();
+
+            if (!buildOn)
+            {
+                buildPanel.SetActive(true);
+            }
+            else
+            {
+                buildPanel.SetActive(false);
+            }
+
+            buildOn = !buildOn;
         }
+
         else
         {
+            if (!buildOn)
+            {
+                buildPanel.SetActive(true);
+            }
+            else
+            {
+                buildPanel.SetActive(false);
+            }
 
-            buildPanel.SetActive(false);
+            buildOn = !buildOn;
         }
 
-        buildOn = !buildOn;
     }
 
     public void activeinven()
     {
-        if (!invenOn)
+        if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
         {
+            GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
 
-            invenpanel.SetActive(true);
+            if (!invenOn)
+            {
+                invenpanel.SetActive(true);
+            }
+            else
+            {
+                invenpanel.SetActive(false);
+            }
+
+            invenOn = !invenOn;
         }
+
         else
         {
+            if (!invenOn)
+            {
+                invenpanel.SetActive(true);
+            }
+            else
+            {
+                invenpanel.SetActive(false);
+            }
 
-            invenpanel.SetActive(false);
+            invenOn = !invenOn;
         }
 
-        invenOn = !invenOn;
     }
 
     public void farming()

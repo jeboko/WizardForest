@@ -11364,7 +11364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f36dddc91373644bea501f54b399e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildOn: 0
+  invenOn: 0
   farming_state: 0
+  buildPanel: {fileID: 0}
+  invenpanel: {fileID: 0}
 --- !u!1001 &731020896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16088,7 +16092,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f36dddc91373644bea501f54b399e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildOn: 0
+  invenOn: 0
   farming_state: 0
+  buildPanel: {fileID: 0}
+  invenpanel: {fileID: 0}
 --- !u!4 &1073659851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400086, guid: c0a9bb89c422471448254ad744f1ddc5,
@@ -23648,7 +23656,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1.0768e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: -1}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -25543,7 +25551,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f36dddc91373644bea501f54b399e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildOn: 0
+  invenOn: 0
   farming_state: 0
+  buildPanel: {fileID: 0}
+  invenpanel: {fileID: 0}
 --- !u!1001 &1650938111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32507,7 +32519,7 @@ MonoBehaviour:
   is_day: 0
   Days: {fileID: 1786028438}
   day_count: 0
-  day_time: 1
+  day_time: 15
   night_time: 20
   time: 0
   Death_Option: {fileID: 95684019}
@@ -33553,7 +33565,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f36dddc91373644bea501f54b399e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildOn: 0
+  invenOn: 0
   farming_state: 0
+  buildPanel: {fileID: 0}
+  invenpanel: {fileID: 0}
 --- !u!1 &2101751515
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-	public int rock_count = 0;
-	public int wood_count = 0;
+    public int rock_count = 0;
+    public int wood_count = 0;
 
     public int red_count = 0;
     public int yellow_count = 0;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     //건물 최종 설치 버튼 활성화 오브젝트
 
     public Text countRock;
-	public Text countWood;
+    public Text countWood;
     public Text countRed;
     public Text countYellow;
     public Text countBlue;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     //생성할 건설 오브젝트
 
     public GameObject build_checker;
-	private GameObject tempo;
+    private GameObject tempo;
     private GameObject tempo2;
 
     //플레이어가 임시로 설치할 건물을 들고있을 때 그 건물을 저장할 오브젝트 변수
@@ -41,9 +41,9 @@ public class Player : MonoBehaviour
     private bool building_state = false;
     //플레이어가 이미 건설 준비중이면 새로운 오브젝트를 손에 들지 못하게 하기 위한 불 변수
 
-  
+
     private void OnTriggerStay(Collider col)
-	{
+    {
 
         if (GameObject.Find("farming_Bt").GetComponent<pauseUI>().farming_state == true)
         {
@@ -82,23 +82,23 @@ public class Player : MonoBehaviour
         }
 
 
-    }	
+    }
 
 
 
-	void Update()
-	{
-		// 재료 카운트 텍스트에 입력
-		countRock.text = "바위 X " + rock_count;
-		countWood.text = "목재 X " + wood_count;
-        countRed.text = "빨간 꽃 X " + red_count;
-        countYellow.text = "노란 꽃 X " + yellow_count;
-        countBlue.text = "파란 꽃 X " + blue_count;
+    void Update()
+    {
+        // 재료 카운트 텍스트에 입력
+        countRock.text = " X " + rock_count;
+        countWood.text = " X " + wood_count;
+        countRed.text = " X " + red_count;
+        countYellow.text = " X " + yellow_count;
+        countBlue.text = " X " + blue_count;
 
-		
+
         if (building_state)
             build_comp_Bt.SetActive(true);
-        else if(!building_state)
+        else if (!building_state)
             build_comp_Bt.SetActive(false);
 
     }
@@ -109,13 +109,18 @@ public class Player : MonoBehaviour
         {
             if (tempo.tag == "baricate")
             {
-                    tempo2 = Instantiate(baricate, build_checker.transform.position, gameObject.transform.rotation);
-                    Destroy(tempo);
-                    rock_count--;
-                    wood_count--;
-                    tempo2.GetComponent<BuildObj>().state = true;
-                    building_state = false;
-           
+                tempo2 = Instantiate(baricate, build_checker.transform.position, gameObject.transform.rotation);
+                Destroy(tempo);
+                rock_count--;
+                wood_count--;
+                tempo2.GetComponent<BuildObj>().state = true;
+                building_state = false;
+
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
+
             }
 
             else if (tempo.tag == "baricate2")
@@ -126,6 +131,11 @@ public class Player : MonoBehaviour
                 wood_count -= 2;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
+
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
 
             }
 
@@ -138,9 +148,14 @@ public class Player : MonoBehaviour
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
 
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
+
             }
 
-            else if(tempo.tag == "fire_barrel")
+            else if (tempo.tag == "fire_barrel")
             {
 
                 tempo2 = Instantiate(fire_b, build_checker.transform.position, gameObject.transform.rotation);
@@ -148,6 +163,11 @@ public class Player : MonoBehaviour
                 red_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
+
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
             }
 
             else if (tempo.tag == "slow_trap")
@@ -158,6 +178,11 @@ public class Player : MonoBehaviour
                 blue_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
+
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
             }
 
             else if (tempo.tag == "poison_trap")
@@ -168,6 +193,11 @@ public class Player : MonoBehaviour
                 yellow_count--;
                 tempo2.GetComponent<BuildObj>().state = true;
                 building_state = false;
+
+                if (GameObject.Find("build_List_Bt").GetComponent<pauseUI>().buildOn == true)
+                {
+                    GameObject.Find("build_List_Bt").GetComponent<pauseUI>().activebuild();
+                }
             }
 
         }
@@ -213,13 +243,13 @@ public class Player : MonoBehaviour
 
     public void create_F()// 건설 준비 버튼(불꽃 통)
     {
-       
+
         if (building_state == false) // 설치 준비
         {
             building_state = true;
             Instantiate(fire_b, build_checker.transform.position, Quaternion.identity).transform.parent = build_checker.transform;
             tempo = transform.Find("build_checker").transform.Find("fire_barrel(Clone)").gameObject;
-            
+
         }
     }
 
@@ -254,3 +284,4 @@ public class Player : MonoBehaviour
         building_state = false;
     }
 }
+

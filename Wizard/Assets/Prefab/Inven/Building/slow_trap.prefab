@@ -14477,8 +14477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 7469235878072293176}
-  end_effect: {fileID: 4299170751141984147, guid: fca37675a3697984eb822357ebe35aa4,
-    type: 3}
+  end_effect: {fileID: 1823321448272814, guid: eeb681608558c66408502d614c4bee20, type: 3}
 --- !u!114 &-5121903610700177979
 MonoBehaviour:
   m_ObjectHideFlags: 0

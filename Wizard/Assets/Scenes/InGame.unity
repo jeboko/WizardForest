@@ -35233,7 +35233,7 @@ MonoBehaviour:
   is_day: 0
   Days: {fileID: 1786028438}
   day_count: 0
-  day_time: 40
+  day_time: 1
   night_time: 120
   time: 0
   Death_Option: {fileID: 95684019}

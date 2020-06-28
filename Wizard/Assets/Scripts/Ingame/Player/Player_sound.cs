@@ -51,7 +51,6 @@ public class Player_sound : MonoBehaviour
 
         if (isHit && animator.GetCurrentAnimatorStateInfo(0).IsName("damage"))
         {
-            Debug.Log("da");
             audioSource.PlayOneShot(Hit_Sound); //오디오 재생
             isHit = false;
         }
@@ -65,9 +64,10 @@ public class Player_sound : MonoBehaviour
 
         if (isDie && u_c.HP_amount <= 0)
         {
-            Debug.Log("di");
             audioSource.PlayOneShot(Die_Sound);
             isDie = false;
+            isRun = false;
+            isHit = false;
         }
     }
 

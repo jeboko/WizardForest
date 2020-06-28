@@ -199,7 +199,6 @@ public class Player_Controller : MonoBehaviour
         {
             Player_UI.GetComponent<Player_UI_Controller>().col_dam();
             Anim.SetTrigger("attacked");
-            GetComponent<PlayerSound>().dem_sound();
             KnockBack(collision.gameObject);
         }
         if (collision.gameObject.tag == "item")
@@ -240,7 +239,6 @@ public class Player_Controller : MonoBehaviour
         if (other.gameObject.tag == "Mob_Atk")
         {
             Anim.SetTrigger("attacked");
-            GetComponent<PlayerSound>().dem_sound();
             KnockBack(other.gameObject);
             print("dd");
         }

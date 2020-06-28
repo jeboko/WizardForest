@@ -12,10 +12,11 @@ public class pauseUI : MonoBehaviour
 
     public GameObject buildPanel;
     public GameObject invenpanel;
+    AudioSource AD;
 
     private void Awake()
     {
-
+        AD = GetComponent<AudioSource>();
 
         buildPanel = GameObject.Find("Canvas").transform.Find("buildScreen").gameObject;
 
@@ -93,6 +94,7 @@ public class pauseUI : MonoBehaviour
     public void farming()
     {
         farming_state = true;
+        AD.Play();
     }
 
     private void Update()

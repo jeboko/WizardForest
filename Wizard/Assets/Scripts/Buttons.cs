@@ -16,50 +16,59 @@ public class Buttons : MonoBehaviour
     public Slider music;
     public Slider sound;
     bool option_visible;
-
+     
     public bool ingame; //인게임씬에서 작동하는 버튼인지
     public Image PausePlay;
     public Sprite Pause;
     public Sprite Play;
+    AudioSource AD;
 
     private void Start()
     {
         options.SetActive(false);
         option_visible = false;
+        AD = GetComponent<AudioSource>();
     }
 
     public void StartButton()
     {
         SceneManager.LoadScene("InGame");
+        AD.Play();
+        
     }
 
     public void GoToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        AD.Play();
     }
 
     public void ShowHowToPlay()
     {
         howtoplay.SetActive(true);
         options.SetActive(false);
+        AD.Play();
     }
 
     public void OFFhowtoplay()
     {
         howtoplay.SetActive(false);
         options.SetActive(true);
+        AD.Play();
     }
 
     public void ShowCredits()
     {
         Credits.SetActive(true);
         options.SetActive(false);
+        AD.Play();
     }
 
     public void OFFCredits()
     {
         Credits.SetActive(false);
         options.SetActive(true);
+        AD.Play();
     }
 
     public void NextCredits1()
@@ -99,6 +108,7 @@ public class Buttons : MonoBehaviour
                 PausePlay.sprite = Play;
             }
         }
+        AD.Play();
     }
 
     public void Exit()

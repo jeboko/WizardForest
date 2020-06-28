@@ -94,7 +94,6 @@ MonoBehaviour:
   boom_dec: 0
   islight: 1
   NO_HIT: 0
-  Boom_sound: {fileID: 0}
 --- !u!82 &-5670222249680595774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -105,7 +104,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 076ac9dd9edd4054695ea8192ede3a05, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

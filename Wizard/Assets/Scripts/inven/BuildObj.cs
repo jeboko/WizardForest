@@ -34,6 +34,16 @@ public class BuildObj : MonoBehaviour
             Build_state = 1;
         }
 
+        if (col.gameObject.tag == "baricate2")
+        {
+            Build_state = 1;
+        }
+
+        if (col.gameObject.tag == "baricate3")
+        {
+            Build_state = 1;
+        }
+
         if (col.gameObject.tag == "fire_barrel")
         {
             Build_state = 1;
@@ -45,6 +55,21 @@ public class BuildObj : MonoBehaviour
         }
 
         if (col.gameObject.tag == "poison_trap")
+        {
+            Build_state = 1;
+        }
+
+        if (col.gameObject.tag == "B_flower")
+        {
+            Build_state = 1;
+        }
+
+        if (col.gameObject.tag == "R_flower")
+        {
+            Build_state = 1;
+        }
+
+        if (col.gameObject.tag == "Y_flower")
         {
             Build_state = 1;
         }
@@ -70,11 +95,84 @@ public class BuildObj : MonoBehaviour
         else if (Build_state == 2)
         {
             render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+
+            if (gameObject.tag == "poison_trap")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_vase_02").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+            }
+
+            if (gameObject.tag == "slow_trap")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_bowl_metal_01").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate2")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01b").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a (1)").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate3")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_log_wood_01").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a (1)").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01b").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(render.material.color.r, 1.0f, render.material.color.b, 1.0f);
+            }
+
         }
 
         else if (Build_state == 1)
         {
             render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+
+            if (gameObject.tag == "poison_trap")
+            {
+                render = transform.Find("posion_trap").transform.Find("rpgpp_lt_vase_02").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            }
+
+            if (gameObject.tag == "slow_trap")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_bowl_metal_01").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate2")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01b").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a (1)").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            }
+
+            if (gameObject.tag == "baricate3")
+            {
+                render = gameObject.transform.Find("rpgpp_lt_log_wood_01").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01a (1)").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+                render = gameObject.transform.Find("rpgpp_lt_wood_path_01b").gameObject.GetComponent<Renderer>();
+                render.material.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            }
         }
 
         //else if (Build_state == 3)

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss_Sound : MonoBehaviour
 {
+    
+
     public AudioClip Atk_Sound1;
     public AudioClip Atk_Sound2;
     public AudioClip Take_off_Sound;
@@ -25,11 +28,13 @@ public class Boss_Sound : MonoBehaviour
         isDie = true;
         isTake_off = true;
         isFly = true;
+        
     }
 
     void Update()
     {
         m_sound();
+        SoundSlider();
     }
 
     void m_sound()
@@ -79,5 +84,11 @@ public class Boss_Sound : MonoBehaviour
             audioSource.PlayOneShot(Die_Sound);
             isDie = false;
         }
+    }
+
+
+    public void SoundSlider()
+    {
+        audioSource.volume = GameObject.Find("Player").transform.Find("wizard_01").GetComponent<Player_sound>().audioSource.volume;
     }
 }

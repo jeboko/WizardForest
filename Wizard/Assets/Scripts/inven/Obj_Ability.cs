@@ -54,6 +54,15 @@ public class Obj_Ability : MonoBehaviour
             {
                 other.transform.Translate(Vector3.forward * -2.0f);
             }
+            if (gameObject.tag == "baricate2")
+            {
+                other.transform.Translate(Vector3.forward * -2.0f);
+            }
+
+            if (gameObject.tag == "baricate3")
+            {
+                other.transform.Translate(Vector3.forward * -2.0f);
+            }
 
             if (gameObject.tag == "poison_trap")
             {
@@ -69,7 +78,7 @@ public class Obj_Ability : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "Mob_Atk")
+        if (other.gameObject.tag == "Mob_Atk" && (gameObject.tag == "baricate" || gameObject.tag == "baricate2" || gameObject.tag == "baricate3"))
         {
             Destroy(other.gameObject);
         }

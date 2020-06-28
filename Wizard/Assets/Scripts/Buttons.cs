@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    public static float MusicVolume;
-    public static float SoundVolume;
     public GameObject options;
     public GameObject howtoplay;
     public GameObject Credits;
@@ -83,7 +81,6 @@ public class Buttons : MonoBehaviour
     {
         if (option_visible)
         {
-            SaveOption();
             Time.timeScale = 1f;
             option_visible = false;
             options.SetActive(false);
@@ -94,7 +91,6 @@ public class Buttons : MonoBehaviour
         }
         else
         {
-            LoadOption();
             Time.timeScale = 0f;
             option_visible = true;
             options.SetActive(true);
@@ -110,14 +106,5 @@ public class Buttons : MonoBehaviour
         Application.Quit();
     }
 
-    void SaveOption()
-    {
-        music.GetComponent<Slider>().value = MusicVolume;
-        sound.GetComponent<Slider>().value = SoundVolume;
-    }
-    void LoadOption()
-    {
-        MusicVolume = music.GetComponent<Slider>().value;
-        SoundVolume = sound.GetComponent<Slider>().value;
-    }
+
 }

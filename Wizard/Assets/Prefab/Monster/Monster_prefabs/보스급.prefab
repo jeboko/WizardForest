@@ -864,6 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a619600af8a0514fb3d5ebd6c3737fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: {fileID: 31160918997778559, guid: 152c08da7d3edc347ad022618bf8b55b,
+    type: 3}
   Atk_Sound1: {fileID: 8300000, guid: 8657017a56f35ea4fb52ff67db8c8e17, type: 3}
   Atk_Sound2: {fileID: 8300000, guid: 40cfcf0f61d56674c8634234f91814f9, type: 3}
   Take_off_Sound: {fileID: 8300000, guid: d1ca77d6207a57e4db5309675490e9c6, type: 3}

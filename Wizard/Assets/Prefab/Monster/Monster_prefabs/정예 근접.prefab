@@ -632,6 +632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef638d45653a574f8f4d07f2883656e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolume: {fileID: 31160918997778559, guid: 152c08da7d3edc347ad022618bf8b55b,
+    type: 3}
   Atk_Sound: {fileID: 8300000, guid: 76125e7dcd48b1849be63224929da150, type: 3}
   Die_Sound: {fileID: 8300000, guid: 516cce5795e9f1a4c8d8d62a60476d95, type: 3}
   audioSource: {fileID: 0}

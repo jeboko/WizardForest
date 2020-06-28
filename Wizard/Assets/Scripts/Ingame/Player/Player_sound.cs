@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_sound : MonoBehaviour
 {
+    public Slider masterVolume;
+    private float masterVol = 1f;
+
+
     public AudioClip Run_Sound;
     public AudioClip Hit_Sound;
     public AudioClip Die_Sound;
@@ -23,11 +28,17 @@ public class Player_sound : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         u_c = GameObject.Find("Player_UI").GetComponent<Player_UI_Controller>();
+
+        masterVol = PlayerPrefs.GetFloat("backvol", 1f);
+        masterVolume.value = masterVol;
+        audioSource.volume = masterVolume.value;
     }
 
     // Update is called once per frame
     void Update()
     {
+        SoundSlider();
+
         if (isRun && animator.GetCurrentAnimatorStateInfo(0).IsName("run"))
         {
             Debug.Log("re");
@@ -58,5 +69,13 @@ public class Player_sound : MonoBehaviour
             audioSource.PlayOneShot(Die_Sound);
             isDie = false;
         }
+    }
+
+    public void SoundSlider()
+    {
+        audioSource.volume = masterVolume.value;
+
+        masterVol = masterVolume.value;
+        PlayerPrefs.GetFloat("backvol", 1f);
     }
 }

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sound_Manager : MonoBehaviour
 {
+ 
+
     public AudioClip Atk_Sound;
     public AudioClip Die_Sound;
     [HideInInspector] public AudioSource audioSource;
@@ -15,16 +18,20 @@ public class Sound_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         controller = GetComponent<Mob_controller>();
         isPlay = true;
         isDie = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        SoundSlider();
+
         if (isPlay && animator.GetCurrentAnimatorStateInfo(0).IsName("attack"))
         {
             audioSource.PlayOneShot(Atk_Sound); //오디오 재생
@@ -41,6 +48,13 @@ public class Sound_Manager : MonoBehaviour
             audioSource.PlayOneShot(Die_Sound);
             isDie = false;
         }
+    }
+
+    public void SoundSlider()
+    {
+        audioSource.volume = GameObject.Find("Player").transform.Find("wizard_01").GetComponent<Player_sound>().audioSource.volume;
+
+        
     }
 }
 

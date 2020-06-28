@@ -535,7 +535,6 @@ MonoBehaviour:
   Hp: 0
   Atk: 0
   Speed: 0
-  in_speed: 0
   hpBarPrefab: {fileID: 5112782707441879583, guid: 319d61e0b21116449ab2a0e847ba6e84,
     type: 3}
   hpBarOffset: {x: 0, y: 2, z: 0}
@@ -632,8 +631,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef638d45653a574f8f4d07f2883656e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk_Sound: {fileID: 8300000, guid: 76125e7dcd48b1849be63224929da150, type: 3}
-  Die_Sound: {fileID: 8300000, guid: 516cce5795e9f1a4c8d8d62a60476d95, type: 3}
+  Atk_Sound: {fileID: 0}
+  Die_Sound: {fileID: 0}
   audioSource: {fileID: 0}
 --- !u!1 &3774457343280025063
 GameObject:

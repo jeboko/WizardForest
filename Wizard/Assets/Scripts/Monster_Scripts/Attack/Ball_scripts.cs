@@ -33,6 +33,14 @@ public class Ball_scripts : MonoBehaviour
     {
         time += Time.deltaTime;
         gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (gameObject.transform.position.y <= 0.5f)
+        {
+            gameObject.transform.Translate(0, 0.2f, 0);
+        }
+        if (gameObject.transform.position.y > 0.6f)
+        {
+            gameObject.transform.Translate(0, -0.2f, 0);
+        }
         if (time > 3f)
         {
             Destroy(gameObject);

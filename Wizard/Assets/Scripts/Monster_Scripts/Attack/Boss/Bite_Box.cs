@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bite_Box : MonoBehaviour
 {
-    Dummy_move player_hp;
+    Player_UI_Controller player_hp;
     public float damage;
 
     public int num;
@@ -14,7 +14,7 @@ public class Bite_Box : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player_hp = GameObject.Find("Player_dummy ").GetComponent<Dummy_move>();
+        player_hp = GameObject.Find("Player_UI ").GetComponent<Player_UI_Controller>();
         controller = GameObject.Find("Monster_Manager").GetComponent<Mob_Manager_Scripts>();
         damage = controller.deck[num - 1].Atk;
     }
@@ -24,7 +24,7 @@ public class Bite_Box : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                player_hp.Hp -= damage;
+                player_hp.HP_amount -= damage;
             }
         }
         catch (NullReferenceException ex)

@@ -11540,6 +11540,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill3_item
       objectReference: {fileID: 0}
+    - target: {fileID: 2945561286328362228, guid: 1cc8e08a042d7af40bec5bf505ee203f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc8e08a042d7af40bec5bf505ee203f, type: 3}
 --- !u!1001 &672013324
@@ -14223,6 +14228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skill2_item
+      objectReference: {fileID: 0}
+    - target: {fileID: 5366563669784305051, guid: 0a18f1c5b99541446b1f798c8683919e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5366563669784305054, guid: 0a18f1c5b99541446b1f798c8683919e,
         type: 3}
@@ -17092,6 +17102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skill1_item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211168906511893726, guid: 3f01468cd86f6d349b7462107555919b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f01468cd86f6d349b7462107555919b, type: 3}
@@ -24528,6 +24543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill0_item
       objectReference: {fileID: 0}
+    - target: {fileID: 4683078896818094654, guid: 9c141dbb23a320743a80801156954b81,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c141dbb23a320743a80801156954b81, type: 3}
 --- !u!1001 &1451087526
@@ -28668,6 +28688,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skill4_item
       objectReference: {fileID: 0}
+    - target: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4479682122763043287, guid: e5c32296f1d844d4baffd0c5d26330cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32761,7 +32786,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[3].Atk
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32782,7 +32807,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[5].Hp
-      value: 400
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -35553,8 +35578,8 @@ MonoBehaviour:
   is_day: 0
   Days: {fileID: 1786028438}
   day_count: 0
-  day_time: 10
-  night_time: 60
+  day_time: 40
+  night_time: 120
   time: 0
   Death_Option: {fileID: 95684019}
   spwaner: {fileID: 1921166932}

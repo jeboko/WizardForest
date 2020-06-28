@@ -27,6 +27,11 @@ public class Short_atk_box : MonoBehaviour
             {
                 player_hp.HP_amount -= damage;
             }
+
+            if (other.tag == "baricate" || other.tag == "baricate2" || other.tag == "baricate3")
+            {
+                other.gameObject.GetComponent<Obj_Ability>().Hp -= (int)damage;
+            }
         }
         catch(NullReferenceException ex)
         {

@@ -37,10 +37,12 @@ public class Ball_scripts : MonoBehaviour
         {
             gameObject.transform.Translate(0, 0.2f, 0);
         }
+        /*
         if (gameObject.transform.position.y > 0.6f)
         {
             gameObject.transform.Translate(0, -0.2f, 0);
         }
+        */
         if (time > 3f)
         {
             Destroy(gameObject);
@@ -53,6 +55,19 @@ public class Ball_scripts : MonoBehaviour
         {
             Instantiate(Hit_Effect, gameObject.transform.position, Quaternion.identity);
             player_hp.HP_amount = player_hp.HP_amount - damage;
+            Destroy(gameObject);
+        }
+
+        if (other.tag == "baricate" || other.tag == "baricate2" || other.tag == "baricate3")
+        {
+            Instantiate(Hit_Effect, gameObject.transform.position, Quaternion.identity);
+            other.gameObject.GetComponent<Obj_Ability>().Hp -= (int)damage;
+            Destroy(gameObject);
+        }
+
+        if(other.tag == "wood" || other.tag == "rock")
+        {
+            Instantiate(Hit_Effect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

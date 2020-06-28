@@ -23715,6 +23715,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7095208655116974704, guid: e79ebf8b25705de45b0869dbef925b88,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095208655116974704, guid: e79ebf8b25705de45b0869dbef925b88,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095208655116974704, guid: e79ebf8b25705de45b0869dbef925b88,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 7095208655116974706, guid: e79ebf8b25705de45b0869dbef925b88,
         type: 3}
       propertyPath: m_Name
@@ -28760,10 +28775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -32406,7 +32421,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[1].Atk
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32421,7 +32436,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[1].speed
-      value: 2.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32437,7 +32452,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[5].Hp
-      value: 360
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32447,7 +32462,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[5].speed
-      value: 3.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32463,12 +32478,12 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[1].Hp
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[2].Hp
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32478,7 +32493,7 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[0].Atk
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
@@ -32488,17 +32503,27 @@ PrefabInstance:
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[2].speed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[4].speed
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
         type: 3}
       propertyPath: deck.Array.data[3].speed
-      value: 3
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
+        type: 3}
+      propertyPath: deck.Array.data[3].Hp
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194237000533177825, guid: ede5c312171164f489cedabd0425d330,
+        type: 3}
+      propertyPath: deck.Array.data[4].Hp
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 3194237000533177830, guid: ede5c312171164f489cedabd0425d330,
         type: 3}

@@ -53,7 +53,7 @@ MonoBehaviour:
   OBJ: {fileID: 6662194229730525433}
   light: {fileID: 0}
   speed: 10
-  damage: 25
+  damage: 30
   start_time: 0
   destroy_time: 5
   hit_time: 2
@@ -64,7 +64,6 @@ MonoBehaviour:
   boom_dec: 0
   islight: 0
   NO_HIT: 0
-  Boom_sound: {fileID: 0}
 --- !u!135 &6911995756685461019
 SphereCollider:
   m_ObjectHideFlags: 0

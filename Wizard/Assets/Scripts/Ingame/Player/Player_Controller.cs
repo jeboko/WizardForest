@@ -104,6 +104,15 @@ public class Player_Controller : MonoBehaviour
             }
             Animation();
         }
+
+        if(Scene_Manager.day_night == false)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
+        else
+        {
+            GetComponent<BoxCollider>().enabled = true;
+        }
     }
 
     public void Move(float h, float v)

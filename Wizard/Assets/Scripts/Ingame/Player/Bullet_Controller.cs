@@ -8,6 +8,7 @@ public class Bullet_Controller : MonoBehaviour
     public GameObject hit;
     public GameObject OBJ;
     public GameObject light;
+    bool isplayed;
 
     public float speed;
     public float damage;
@@ -24,6 +25,19 @@ public class Bullet_Controller : MonoBehaviour
     public bool islight;
     public bool NO_HIT;
     float time;
+
+    AudioSource AD;
+
+    private void Start()
+    {
+        isplayed = false;
+        AD = GetComponent<AudioSource>();
+        if (NO_HIT && isplayed == false)
+        {
+            AD.Play();
+            isplayed = true;
+        }
+    }
 
     void FixedUpdate()
     {
@@ -53,18 +67,19 @@ public class Bullet_Controller : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "item" && other.gameObject.tag != "Range" && other.gameObject.tag != "Bullet" && other.gameObject.tag != "Mob_Atk")
         {
-            if(NO_HIT == false)
+            if (NO_HIT == false)
             {
                 Destroy(gameObject, hit_time);
                 Hit();
             }
         }
 
-        if(other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             other.gameObject.GetComponent<Mob_controller>().Hp -= damage;
             if (bullet_num == 4)
@@ -73,9 +88,34 @@ public class Bullet_Controller : MonoBehaviour
                 knockback_way = (transform.position - other.gameObject.transform.position);
                 other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(knockback_way.x, 0, knockback_way.z) * 6f * -1f;
             }
+            /*
             else if(bullet_num == 5)
             {
-                other.gameObject.GetComponent<Mob_controller>().Speed *= 0.3f;
+                other.gameObject.GetComponent<Mob_controller>().Speed *= 0.0f;
+            }*/
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (bullet_num == 5)
+            {
+                other.gameObject.GetComponent<Mob_controller>().Speed = 0.0f;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (bullet_num == 5)
+            {
+                other.gameObject.GetComponent<Mob_controller>().Speed = other.gameObject.GetComponent<Mob_controller>().in_speed;
             }
         }
     }
@@ -98,5 +138,12 @@ public class Bullet_Controller : MonoBehaviour
         {
             GetComponent<SphereCollider>().enabled = false;
         }
+
+        if(isplayed == false)
+        {
+            isplayed = true;
+            AD.Play();
+        }
+  
     }
 }

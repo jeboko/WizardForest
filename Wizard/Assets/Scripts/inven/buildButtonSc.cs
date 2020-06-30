@@ -26,7 +26,7 @@ public class buildButtonSc : MonoBehaviour
         }
 
 
-        if (GameObject.Find("Player").GetComponent<Player>().rock_count <= 0 || GameObject.Find("Player").GetComponent<Player>().wood_count <= 0)
+        if (GameObject.Find("Player").GetComponent<Player>().rock_count < 2 || GameObject.Find("Player").GetComponent<Player>().wood_count < 2)
         {
             GameObject.Find("baricate_B2").GetComponent<Button>().interactable = false;
         }
@@ -35,7 +35,7 @@ public class buildButtonSc : MonoBehaviour
             GameObject.Find("baricate_B2").GetComponent<Button>().interactable = true;
         }
 
-        if (GameObject.Find("Player").GetComponent<Player>().rock_count <= 0 || GameObject.Find("Player").GetComponent<Player>().wood_count <= 0)
+        if (GameObject.Find("Player").GetComponent<Player>().rock_count < 3 || GameObject.Find("Player").GetComponent<Player>().wood_count < 3)
         {
             GameObject.Find("baricate_B3").GetComponent<Button>().interactable = false;
         }

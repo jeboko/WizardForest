@@ -42,8 +42,6 @@ public class Scene_Manager : MonoBehaviour
         isdeath = false;
         death_time = 0;
         is_day = true;
-        dayLight.GetComponent<Light>().intensity = 0f;
-        nightLight.GetComponent<Light>().intensity = 1.1f;
     }
 
     void FixedUpdate()
@@ -52,11 +50,6 @@ public class Scene_Manager : MonoBehaviour
         {
             time += Time.deltaTime;
             day_image.GetComponent<Image>().fillAmount = 1f - (time / day_time);
-            if(time <= 2)
-            {
-                dayLight.GetComponent<Light>().intensity += 0.011f;
-                nightLight.GetComponent<Light>().intensity -= 0.011f;
-            }
 
             if (time >= day_time)
             {
@@ -69,6 +62,8 @@ public class Scene_Manager : MonoBehaviour
                 UI3.SetActive(false);
                 UI4.SetActive(false);
                 UI5.SetActive(false);
+                dayLight.SetActive(false);
+                nightLight.SetActive(true);
             }
             is_day = true;
             spwaner.SetActive(false);
@@ -80,11 +75,6 @@ public class Scene_Manager : MonoBehaviour
         {
             time += Time.deltaTime;
             night_image.GetComponent<Image>().fillAmount = 1f - (time / night_time);
-            if (time <= 2)
-            {
-                dayLight.GetComponent<Light>().intensity -= 0.011f;
-                nightLight.GetComponent<Light>().intensity += 0.011f;
-            }
 
             if (time >= night_time)
             {
@@ -97,6 +87,8 @@ public class Scene_Manager : MonoBehaviour
                 UI1.SetActive(true);
                 UI2.SetActive(true);
                 UI3.SetActive(true);
+                dayLight.SetActive(true);
+                nightLight.SetActive(false);
             }
             is_day = false;
             spwaner.SetActive(true);

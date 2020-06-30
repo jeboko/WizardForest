@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43241606cfd3389469d89778e563e8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mob_num: 5
+  Mob_num: 6
   Hp: 0
   Atk: 0
   Speed: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 0
   tempHP: 0
-  Mob_num: 5
+  Mob_num: 6
   isAttack_C: 0
   isAttack_F: 0
   Fly_Attack: 0
@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  num: 5
+  num: 6
 --- !u!1 &5445705424997250961
 GameObject:
   m_ObjectHideFlags: 0

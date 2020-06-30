@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 7721063197380045528}
   - component: {fileID: 2047479664867054580}
   - component: {fileID: 2921556598685264471}
+  - component: {fileID: 8554736396950814149}
   m_Layer: 0
   m_Name: Swarm
   m_TagString: Bullet
@@ -4943,6 +4944,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8554736396950814149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507416365097986391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcc390034268e04bba525ec11d868eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
 --- !u!1 &1909810463905262231
 GameObject:
   m_ObjectHideFlags: 0

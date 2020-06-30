@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43241606cfd3389469d89778e563e8de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mob_num: 4
+  Mob_num: 5
   Hp: 0
   Atk: 0
   Speed: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   - item: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf, type: 3}
   i_num: 5
   temp: {fileID: 0}
-  drop_range: 5
+  drop_range: 3
   isdorp: 0
 --- !u!114 &8107631683299868769
 MonoBehaviour:
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Atk_Sound: {fileID: 8300000, guid: 76125e7dcd48b1849be63224929da150, type: 3}
-  Die_Sound: {fileID: 0}
+  Die_Sound: {fileID: 8300000, guid: 516cce5795e9f1a4c8d8d62a60476d95, type: 3}
   audioSource: {fileID: 0}
 --- !u!1 &3774457343280025063
 GameObject:

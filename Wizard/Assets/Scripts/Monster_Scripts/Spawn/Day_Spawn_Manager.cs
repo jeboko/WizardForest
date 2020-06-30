@@ -22,8 +22,8 @@ public class Day_Spawn_Manager : MonoBehaviour
     void init_spawn_system()
     {
         spawn_manager.deck[0].weight = 10;
-        spawn_manager.deck[1].weight = 5;
-        spawn_manager.deck[2].weight = 5;
+        spawn_manager.deck[1].weight = 7;
+        spawn_manager.deck[2].weight = 10;
         spawn_manager.deck[3].weight = 0;
         spawn_manager.deck[4].weight = 0;
     }

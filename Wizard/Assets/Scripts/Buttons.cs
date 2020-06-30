@@ -25,6 +25,7 @@ public class Buttons : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         options.SetActive(false);
         option_visible = false;
         AD = GetComponent<AudioSource>();

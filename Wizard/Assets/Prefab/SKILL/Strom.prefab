@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2846221824565800892}
   - component: {fileID: 3997869823646171341}
   - component: {fileID: 9195657040785670938}
+  - component: {fileID: 6578474792287150767}
   m_Layer: 0
   m_Name: Strom
   m_TagString: Bullet
@@ -191,6 +192,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6578474792287150767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351752656619312431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edcc390034268e04bba525ec11d868eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
 --- !u!1 &5284180747343204716
 GameObject:
   m_ObjectHideFlags: 0

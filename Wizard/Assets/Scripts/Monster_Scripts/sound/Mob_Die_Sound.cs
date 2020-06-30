@@ -16,7 +16,8 @@ public class Mob_Die_Sound : MonoBehaviour
 
     private void Update()
     {
-        if(isdie)
+        SoundSlider();
+        if (isdie)
         {
             audioSource.Play();
             isdie = false;

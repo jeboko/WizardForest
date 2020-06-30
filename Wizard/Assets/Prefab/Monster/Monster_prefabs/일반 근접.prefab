@@ -495,7 +495,7 @@ MonoBehaviour:
   - item: {fileID: 4479682122763043284, guid: e5c32296f1d844d4baffd0c5d26330cf, type: 3}
   i_num: 5
   temp: {fileID: 0}
-  drop_range: 5
+  drop_range: 3
   isdorp: 0
 --- !u!114 &4953799884680514905
 MonoBehaviour:
